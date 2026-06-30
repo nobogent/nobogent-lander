@@ -20,44 +20,107 @@ import logoTransparent from '../assets/logo-transparent.png';
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/geist-sans" rel="stylesheet" />
 
-    <!-- Meta Pixel Code (PageSpeed Optimized: Delayed until window load) -->
+    <!-- Consent Management script (GDPR/CCPA/ePrivacy Compliant) -->
     <script is:inline>
-      window.addEventListener('load', function() {
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1684055349552829');
-        fbq('track', 'PageView');
-      });
+      (function() {
+        var storageKey = 'nobogent_cookie_consent';
+        
+        function loadTracking() {
+          // 1. Load Meta Pixel
+          if (!window.fbq) {
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1684055349552829');
+            fbq('track', 'PageView');
+          }
+          
+          // 2. Load Google Tag Manager
+          if (!window.dataLayer) {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W79WBBRP');
+          }
+        }
+        
+        window.nobogentAcceptConsent = function() {
+          try {
+            localStorage.setItem(storageKey, 'accepted');
+          } catch(e) {}
+          loadTracking();
+        };
+
+        window.nobogentDeclineConsent = function() {
+          try {
+            localStorage.setItem(storageKey, 'declined');
+          } catch(e) {}
+        };
+        
+        var consent = null;
+        try {
+          consent = localStorage.getItem(storageKey);
+        } catch(e) {}
+        
+        if (consent === 'accepted') {
+          window.addEventListener('load', function() {
+            setTimeout(loadTracking, 1500);
+          });
+        } else if (consent !== 'declined') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var banner = document.getElementById('cookieConsentBanner');
+            var acceptBtn = document.getElementById('acceptCookies');
+            var declineBtn = document.getElementById('declineCookies');
+            
+            if (banner) {
+              setTimeout(function() {
+                banner.classList.add('show');
+              }, 1200);
+            }
+            
+            if (acceptBtn) {
+              acceptBtn.addEventListener('click', function() {
+                window.nobogentAcceptConsent();
+                if (banner) banner.classList.remove('show');
+              });
+            }
+            
+            if (declineBtn) {
+              declineBtn.addEventListener('click', function() {
+                window.nobogentDeclineConsent();
+                if (banner) banner.classList.remove('show');
+              });
+            }
+          });
+        }
+      })();
     </script>
-    <noscript>
-      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1684055349552829&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
-    <!-- Google Tag Manager (PageSpeed Optimized) -->
-    <script is:inline>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-W79WBBRP');
-        }, 1500);
-      });
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W79WBBRP"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1684055349552829&ev=PageView&noscript=1" />
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-banner">
+      <p>
+        We use cookies to optimize site experience, analyze analytics traffic, and personalize ads. You can accept or decline non-essential cookies. Read our <a href="/privacy-policy">Privacy Policy</a> to learn more.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="declineCookies" class="cookie-btn cookie-btn-decline">Decline</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept All</button>
+      </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="header-nav">
