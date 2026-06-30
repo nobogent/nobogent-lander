@@ -1,0 +1,474 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>Nobogent AI - Your First AI Marketing Employee</title>
+    <meta name="description" content="Bypass cookie blockers, auto-design ad graphics, and launch Meta Ads using server-side Conversions API (CAPI) with Nobogent AI—the ultimate marketing engine for real estate & SMBs." />
+    <meta name="keywords" content="nobogent,nobogent.com,AI marketing,landing page generator,Meta ads automation,Conversions API,CAPI leads generation,marketing suite for SMBs" />
+    <link rel="canonical" href="https://nobogent.com" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nobogent.com" />
+    <meta property="og:title" content="Nobogent AI - Your First AI Marketing Employee" />
+    <meta property="og:description" content="Launch high-converting landing pages and CAPI-optimized Meta Ads on autopilot." />
+    <meta property="og:image" content="https://nobogent.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nobogent.com" />
+    <meta property="twitter:title" content="Nobogent AI - Your First AI Marketing Employee" />
+    <meta property="twitter:description" content="Launch high-converting landing pages and CAPI-optimized Meta Ads on autopilot." />
+    
+    <!-- Inline favicon svg just in case favicon.svg isn't present -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▲</text></svg>">
+  </head>
+  <body>
+    <!-- Top banner -->
+    <div style="background-color: var(--color-primary); color: var(--color-on-primary); padding: 8px 16px; font-size: 11px; font-weight: 500; text-align: center; letter-spacing: 0.05em;" class="mono-label">
+      INTRODUCING NOBOGENT AI v1.0 • AUTO-SCALING REAL ESTATE PIPELINES
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header-nav">
+      <div class="container header-container">
+        <a href="#" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+          <img src="/logo-transparent.png" alt="Nobogent Logo" style="height: 48px; width: auto; object-fit: contain;" />
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#problems">Bottlenecks</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#comparison">Compare Savings</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+          </ul>
+        </nav>
+
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="#qualify" class="btn btn-secondary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Login</a>
+          <a href="#qualify" class="btn btn-primary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="position: relative;">
+      <!-- Hero Mesh Decorator -->
+      <div class="mesh-bg"></div>
+      <div class="grid-overlay"></div>
+
+      <!-- Hero Section -->
+      <section style="padding: var(--spacing-5xl) 0 var(--spacing-3xl); text-align: center;">
+        <div class="container">
+          <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background-color: rgba(23,23,23,0.05); border: 1px solid rgba(23,23,23,0.08); border-radius: var(--rounded-pill-sm); margin-bottom: var(--spacing-lg);" class="mono-label animate-fade-in">
+            <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--color-link); border-radius: 50%;"></span>
+            Direct-Response Marketing Employee
+          </div>
+
+          <h1 class="display-xl animate-slide-up" style="margin-bottom: var(--spacing-md); max-width: 900px; margin-left: auto; margin-right: auto; text-wrap: balance;">
+            Your First <span style="background: linear-gradient(90deg, #0070f3, #7928ca, #ff0080); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">AI Marketing Employee</span>
+          </h1>
+
+          <p class="animate-slide-up" style="font-size: 18px; color: var(--color-body); max-width: 680px; margin: 0 auto var(--spacing-2xl); text-wrap: balance;">
+            Auto-generate ad graphics, edit video ads, and configure Meta Conversions API (CAPI) servers on autopilot. Launch high-converting real estate campaigns in 60 seconds.
+          </p>
+
+          <!-- Budget Wizard Form Card -->
+          <div class="card-verc wizard-card animate-slide-up" id="qualify" style="margin-bottom: var(--spacing-3xl); box-shadow: 0 30px 60px rgba(0,0,0,0.08); background-color: rgba(255,255,255,0.95); backdrop-filter: blur(8px);">
+            <div id="wizard-form-container">
+              <!-- Wizard Steps Indicator -->
+              <div class="wizard-steps">
+                <div class="wizard-step active" id="step-dot-1">1</div>
+                <div class="wizard-step" id="step-dot-2">2</div>
+                <div class="wizard-step" id="step-dot-3">3</div>
+              </div>
+
+              <!-- Step 1: Budget Selection -->
+              <div id="step-content-1">
+                <h3 style="font-size: var(--spacing-lg); margin-bottom: var(--spacing-xxs);">What is your monthly marketing budget?</h3>
+                <p style="font-size: 12px; color: var(--color-mute); margin-bottom: var(--spacing-xl);">We customize our server allocations based on your advertising volume.</p>
+                <div class="option-grid">
+                  <button type="button" class="option-button budget-opt" data-value="10k-20k">₹10k - 20k</button>
+                  <button type="button" class="option-button budget-opt selected" data-value="20k-50k">₹20k - 50k</button>
+                  <button type="button" class="option-button budget-opt" data-value="50k+">₹50k+</button>
+                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%;" id="btn-next-1">Continue &rarr;</button>
+              </div>
+
+              <!-- Step 2: Timing Selection -->
+              <div id="step-content-2" style="display: none;">
+                <h3 style="font-size: var(--spacing-lg); margin-bottom: var(--spacing-xxs);">When are you looking to launch?</h3>
+                <p style="font-size: 12px; color: var(--color-mute); margin-bottom: var(--spacing-xl);">Determines backend priority queue speed.</p>
+                <div class="option-grid">
+                  <button type="button" class="option-button time-opt selected" data-value="immediately">Immediately</button>
+                  <button type="button" class="option-button time-opt" data-value="this-week">This Week</button>
+                  <button type="button" class="option-button time-opt" data-value="next-week">Next Week</button>
+                </div>
+                <div style="display: flex; gap: var(--spacing-sm);">
+                  <button type="button" class="btn btn-secondary" style="flex: 1;" id="btn-prev-2">&larr; Back</button>
+                  <button type="button" class="btn btn-primary" style="flex: 2;" id="btn-next-2">Continue &rarr;</button>
+                </div>
+              </div>
+
+              <!-- Step 3: Qualification/Contact Info -->
+              <div id="step-content-3" style="display: none;">
+                <h3 style="font-size: var(--spacing-lg); margin-bottom: var(--spacing-xxs);">Claim Your Server Slot</h3>
+                <p style="font-size: 12px; color: var(--color-mute); margin-bottom: var(--spacing-lg);">Enter your details to generate your tailored AI marketing setup.</p>
+                <form id="details-form">
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-control" placeholder="Rahul Chopra" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="rahul@agency.in" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="+91 99999 99999" required />
+                  </div>
+                  <div style="display: flex; gap: var(--spacing-sm); margin-top: var(--spacing-lg);">
+                    <button type="button" class="btn btn-secondary" style="flex: 1;" id="btn-prev-3">&larr; Back</button>
+                    <button type="submit" class="btn btn-primary" style="flex: 2; background-color: var(--color-link); color: white;">Initialize Setup &rarr;</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Success State -->
+              <div id="step-content-success" style="display: none; padding: var(--spacing-lg) 0;">
+                <div style="width: 48px; height: 48px; background-color: #d3e5ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-lg);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0070f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <h3 style="font-size: var(--spacing-lg); margin-bottom: var(--spacing-sm);">Application Approved!</h3>
+                <p style="font-size: 14px; color: var(--color-body); margin-bottom: var(--spacing-xl);">We have reserved your server environment. A consultant will reach out via email within 15 minutes to coordinate integrations.</p>
+                <button type="button" class="btn btn-primary" style="width: 100%;" onclick="window.location.reload();">Reset Form</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Strip -->
+          <div style="margin-top: var(--spacing-4xl); border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline); padding: var(--spacing-xl) 0;">
+            <p class="mono-label" style="font-size: 10px; color: var(--color-mute); margin-bottom: var(--spacing-lg);">TRUSTED BY SECTOR LEADERS & HIGH-GROWTH AGENCIES</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-2xl); align-items: center; opacity: 0.8;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V9h6v8"/></svg>
+                <span style="font-weight: 700; color: var(--color-ink); font-size: 13px;">Bluesquare Infra</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span style="font-weight: 700; color: var(--color-ink); font-size: 13px;">HomCom Realtors</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span style="font-weight: 700; color: var(--color-ink); font-size: 13px;">GNR Homes</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                <span style="font-weight: 700; color: var(--color-ink); font-size: 13px;">Realty Nation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem Statement Section -->
+      <section id="problems" style="padding: var(--spacing-5xl) 0; background-color: var(--color-canvas-soft); border-bottom: 1px solid var(--color-hairline);">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-error); background-color: var(--color-error-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(238,0,0,0.15);">SAAS PROBLEM STATEMENT</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">The Big 3 Growth Bottlenecks</h2>
+          <p style="color: var(--color-body); max-width: 600px; margin: 0 auto var(--spacing-3xl);">Real estate builders and SMBs bleed revenue through three fatal pipeline gaps.</p>
+          
+          <div class="feature-mesh-grid">
+            <!-- Card 1 -->
+            <div class="card-verc" style="border-top: 4px solid var(--color-error); text-align: left;">
+              <div style="font-size: 28px; margin-bottom: var(--spacing-md);">🚨</div>
+              <h3 style="font-size: 18px; margin-bottom: var(--spacing-sm);">Dry Pipeline</h3>
+              <p style="font-size: 13px; color: var(--color-body); line-height: 1.6;">Struggling with inconsistent <strong>Lead Generation</strong>. Without automated funnels, revenue projections remain highly unpredictable.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card-verc" style="border-top: 4px solid var(--color-error); text-align: left;">
+              <div style="font-size: 28px; margin-bottom: var(--spacing-md);">💸</div>
+              <h3 style="font-size: 18px; margin-bottom: var(--spacing-sm);">Bleeding Cash</h3>
+              <p style="font-size: 13px; color: var(--color-body); line-height: 1.6;"><strong>Low Conversions</strong>. Spending thousands on digital advertising platforms, but cookie-blocked tracking causes traffic to bounce with zero trace.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card-verc" style="border-top: 4px solid var(--color-error); text-align: left;">
+              <div style="font-size: 28px; margin-bottom: var(--spacing-md);">⏳</div>
+              <h3 style="font-size: 18px; margin-bottom: var(--spacing-sm);">Creative Burnout</h3>
+              <p style="font-size: 13px; color: var(--color-body); line-height: 1.6;">High content demand. Burning out writing ad copy, selecting media layout structures, and styling high-click-through reels manually.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions Section -->
+      <section id="solutions" style="padding: var(--spacing-5xl) 0;">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-link); background-color: var(--color-link-bg-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(0,112,243,0.15);">CONVERSION OPTIMIZERS</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">How Nobogent Multiplies Conversions</h2>
+          <p style="color: var(--color-body); max-width: 600px; margin: 0 auto var(--spacing-3xl);">Custom engineering configured directly under the hood to ensure traffic turns to revenue.</p>
+          
+          <div class="feature-mesh-grid">
+            <!-- Solution 1 -->
+            <div class="card-verc" style="text-align: left; background-color: var(--color-canvas-soft-2);">
+              <h3 style="font-size: 18px; margin-bottom: var(--spacing-sm); display: flex; align-items: center; gap: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                CAPI Installed CRM
+              </h3>
+              <p style="font-size: 13px; color: var(--color-body); line-height: 1.6;">We deploy Meta Conversions API (CAPI) server-side configurations. Bypass browser tracking restrictions, preserve complete user sessions, and train ad algorithms to capture high-intent leads.</p>
+            </div>
+            <!-- Solution 2 -->
+            <div class="card-verc" style="text-align: left; background-color: var(--color-canvas-soft-2);">
+              <h3 style="font-size: 18px; margin-bottom: var(--spacing-sm); display: flex; align-items: center; gap: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                1-Click Campaign Optimize
+              </h3>
+              <p style="font-size: 13px; color: var(--color-body); line-height: 1.6;">Generate high-CTR static ad graphics and media video elements instantly from a single input dashboard. Refresh campaigns dynamically to mitigate creative fatigue.</p>
+            </div>
+            <!-- Solution 3 -->
+            <div class="card-verc" style="text-align: left; background-color: var(--color-canvas-soft-2);">
+              <h3 style="font-size: 18px; margin-bottom: var(--spacing-sm); display: flex; align-items: center; gap: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                The Trust Retargeting Engine
+              </h3>
+              <p style="font-size: 13px; color: var(--color-body); line-height: 1.6;">Systematically build brand <strong>TRUST</strong>. Automated retargeting funnels nurture warm prospects with optimized credibility triggers, converting them to customers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cost / Savings Comparison Table Section -->
+      <section id="comparison" style="padding: var(--spacing-5xl) 0; background-color: var(--color-canvas-soft); border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline);">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <span class="mono-label" style="color: var(--color-violet-deep); background-color: var(--color-violet-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(121,40,202,0.15);">THE VALUE DISCONNECT</span>
+            <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">Compare Monthly Savings</h2>
+            <p style="color: var(--color-body); max-width: 600px; margin: 0 auto;">See how much overhead is automated under the Nobogent AI architecture compared to traditional agencies.</p>
+          </div>
+
+          <div class="card-verc" style="max-width: 900px; margin: 0 auto; overflow: hidden; padding: 0;">
+            <div style="overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--color-hairline); background-color: var(--color-canvas-soft-2);">
+                    <th style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-ink);" class="mono-label">Growth Service</th>
+                    <th style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-mute);">Traditional Agency Cost / Mo</th>
+                    <th style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 700; color: var(--color-link);">With Nobogent AI</th>
+                  </tr>
+                </thead>
+                <tbody style="color: var(--color-body);">
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">Geospatial Lead Targeting (GEO)</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹15,000 / $200</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">AI User-Clone Video Generation</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹30,000 / $400</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">AI Video & Caption Editing</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹25,000 / $350</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">Static Ad Creative & Graphics Layout</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹10,000 / $150</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">Auto Meta Ad Optimizations</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹40,000 / $500</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">Trust retargeting campaign builder</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹20,000 / $250</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-hairline);">
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 500; color: var(--color-ink);">CAPI Backend Deployment</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); text-decoration: line-through; color: var(--color-error);">₹15,000 / $200</td>
+                    <td style="padding: var(--spacing-md) var(--spacing-lg); font-weight: 600; color: var(--color-link);">✓ Included</td>
+                  </tr>
+                  <tr style="background-color: rgba(0,112,243,0.02); font-weight: 600;">
+                    <td style="padding: var(--spacing-lg) var(--spacing-lg); color: var(--color-ink); font-weight: 700;">Total Estimate</td>
+                    <td style="padding: var(--spacing-lg) var(--spacing-lg); text-decoration: line-through; color: var(--color-error); font-weight: 700;">₹1,95,000 / $2,550</td>
+                    <td style="padding: var(--spacing-lg) var(--spacing-lg); color: var(--color-success); font-size: 16px; font-weight: 800;">Just ₹9,999 / $199 / mo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials / Customer Reviews Section -->
+      <section id="reviews" style="padding: var(--spacing-5xl) 0;">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-cyan-deep); background-color: var(--color-cyan-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(41,188,155,0.15);">REAL CUSTOMER FEEDBACK</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">What Business Owners Say</h2>
+          <p style="color: var(--color-body); max-width: 600px; margin: 0 auto var(--spacing-3xl);">Unedited feedback from entrepreneurs who automated their marketing campaigns with our engine.</p>
+
+          <div class="feature-mesh-grid">
+            <!-- Review 1 -->
+            <div class="card-verc" style="text-align: left;">
+              <div style="color: #ffca28; margin-bottom: var(--spacing-sm); font-size: 16px;">★★★★★</div>
+              <p style="font-size: 13px; line-height: 1.6; font-style: italic; color: var(--color-body); margin-bottom: var(--spacing-lg);">
+                "We were burning ₹50,000 every month paying marketing agencies that brought in junk leads. Deploying the Nobogent CAPI backend and auto-graphics changed everything. Pipeline has been full ever since!"
+              </p>
+              <div style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-sm);">
+                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-ink);">Rajesh K.</h4>
+                <p style="font-size: 11px; font-family: 'Geist Mono'; color: var(--color-mute);">Owner, Realty Nation Partners</p>
+              </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="card-verc" style="text-align: left;">
+              <div style="color: #ffca28; margin-bottom: var(--spacing-sm); font-size: 16px;">★★★★★</div>
+              <p style="font-size: 13px; line-height: 1.6; font-style: italic; color: var(--color-body); margin-bottom: var(--spacing-lg);">
+                "Creating social creatives and video layouts used to take up my entire week. With the Nobogent generator, I design everything, auto-edit the videos, and launch ads in under 60 seconds."
+              </p>
+              <div style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-sm);">
+                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-ink);">Simran S.</h4>
+                <p style="font-size: 11px; font-family: 'Geist Mono'; color: var(--color-mute);">Founder, Regalia Boutique</p>
+              </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="card-verc" style="text-align: left;">
+              <div style="color: #ffca28; margin-bottom: var(--spacing-sm); font-size: 16px;">★★★★★</div>
+              <p style="font-size: 13px; line-height: 1.6; font-style: italic; color: var(--color-body); margin-bottom: var(--spacing-lg);">
+                "The CAPI setup is a game-changer. Tracking is 100% accurate, allowing our Meta Pixel algorithm to target actual buyers instead of random scroll traffic. Highly recommended SaaS utility."
+              </p>
+              <div style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-sm);">
+                <h4 style="font-size: 13px; font-weight: 700; color: var(--color-ink);">Rahul Chopra</h4>
+                <p style="font-size: 11px; font-family: 'Geist Mono'; color: var(--color-mute);">Director, HomCom Realtors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inline Final CTA -->
+      <section style="padding: var(--spacing-5xl) 0; background-color: var(--color-primary); color: var(--color-on-primary); text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container" style="max-width: 600px;">
+          <h2 style="color: var(--color-on-primary); font-size: var(--spacing-2xl); margin-bottom: var(--spacing-sm);">Ready to Automate Your Campaigns?</h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: var(--spacing-xl);">Reserve your server container setup today and start capturing verified lead conversions immediately.</p>
+          <a href="#qualify" class="btn btn-secondary" style="font-size: 15px; font-weight: 600; padding: var(--spacing-sm) var(--spacing-2xl);">Get Started For Free</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="padding: var(--spacing-4xl) 0 var(--spacing-2xl); background-color: var(--color-canvas); font-size: 12px; border-top: 1px solid var(--color-hairline);">
+      <div class="container" style="display: flex; flex-direction: column; gap: var(--spacing-xl);">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-lg);">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--spacing-xs);">
+              <img src="/logo-transparent.png" alt="Nobogent Logo" style="height: 48px; width: auto; object-fit: contain;" />
+            </div>
+            <p style="color: var(--color-mute); max-width: 250px;">Bypass cookie blocks, auto-design ad layouts, and deploy Meta Conversion CRM engines on autopilot.</p>
+          </div>
+          <div>
+            <h4 style="font-size: 11px; font-weight: 600; color: var(--color-ink); margin-bottom: var(--spacing-sm); text-transform: uppercase;" class="mono-label">Framework</h4>
+            <p style="color: var(--color-mute);">Built in Astro for maximum speed, static optimization, and SEO performance.</p>
+          </div>
+          <div>
+            <h4 style="font-size: 11px; font-weight: 600; color: var(--color-ink); margin-bottom: var(--spacing-sm); text-transform: uppercase;" class="mono-label">Legal</h4>
+            <p style="color: var(--color-mute); font-size: 11px;">Powered by Adrolls AI infrastructure.</p>
+          </div>
+        </div>
+        <div style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; color: var(--color-mute);">
+          <p>© {new Date().getFullYear()} Nobogent. All rights reserved.</p>
+          <div style="display: flex; gap: var(--spacing-md);">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Qualification Wizard Script -->
+    <script>
+      // DOM elements
+      const btnNext1 = document.getElementById('btn-next-1');
+      const btnNext2 = document.getElementById('btn-next-2');
+      const btnPrev2 = document.getElementById('btn-prev-2');
+      const btnPrev3 = document.getElementById('btn-prev-3');
+
+      const stepContent1 = document.getElementById('step-content-1');
+      const stepContent2 = document.getElementById('step-content-2');
+      const stepContent3 = document.getElementById('step-content-3');
+      const stepContentSuccess = document.getElementById('step-content-success');
+
+      const stepDot1 = document.getElementById('step-dot-1');
+      const stepDot2 = document.getElementById('step-dot-2');
+      const stepDot3 = document.getElementById('step-dot-3');
+
+      const detailsForm = document.getElementById('details-form');
+
+      // Select option toggles
+      const budgetButtons = document.querySelectorAll('.budget-opt');
+      budgetButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          budgetButtons.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+
+      const timeButtons = document.querySelectorAll('.time-opt');
+      timeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          timeButtons.forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+      });
+
+      // Wizard Nav transitions
+      btnNext1.addEventListener('click', () => {
+        stepContent1.style.display = 'none';
+        stepContent2.style.display = 'block';
+        stepDot2.classList.add('active');
+        stepDot1.classList.add('completed');
+      });
+
+      btnPrev2.addEventListener('click', () => {
+        stepContent2.style.display = 'none';
+        stepContent1.style.display = 'block';
+        stepDot2.classList.remove('active');
+        stepDot1.classList.remove('completed');
+      });
+
+      btnNext2.addEventListener('click', () => {
+        stepContent2.style.display = 'none';
+        stepContent3.style.display = 'block';
+        stepDot3.classList.add('active');
+        stepDot2.classList.add('completed');
+      });
+
+      btnPrev3.addEventListener('click', () => {
+        stepContent3.style.display = 'none';
+        stepContent2.style.display = 'block';
+        stepDot3.classList.remove('active');
+        stepDot2.classList.remove('completed');
+      });
+
+      detailsForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        stepContent3.style.display = 'none';
+        stepContentSuccess.style.display = 'block';
+        stepDot3.classList.add('completed');
+      });
+    </script>
+  </body>
+</html>
