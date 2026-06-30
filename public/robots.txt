@@ -1,0 +1,33 @@
+# robots.txt for Nobogent AI
+
+# Allow standard search engine web crawlers
+User-agent: *
+Allow: /
+
+# Allow LLM and search AI agents (GEO Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap URL
+Sitemap: https://nobogent.com/sitemap-index.xml
