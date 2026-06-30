@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logoTransparent from '../assets/logo-transparent.png';
 ---
 
 <html lang="en">
@@ -10,36 +12,58 @@ import '../styles/global.css';
     <title>Terms of Service - Nobogent AI</title>
     <meta name="description" content="Terms of Service for Nobogent AI marketing automation suite." />
     
-    <!-- Font Preconnect -->
+    <!-- Font & Asset Optimization (PageSpeed Optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+    <link rel="preload" href={logoTransparent.src} as="image" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.cdnfonts.com/css/geist-sans" rel="stylesheet" />
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (PageSpeed Optimized: Delayed until window load) -->
     <script is:inline>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1684055349552829');
-      fbq('track', 'PageView');
+      window.addEventListener('load', function() {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1684055349552829');
+        fbq('track', 'PageView');
+      });
     </script>
     <noscript>
       <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1684055349552829&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager (PageSpeed Optimized) -->
+    <script is:inline>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-W79WBBRP');
+        }, 1500);
+      });
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W79WBBRP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Header Navigation -->
     <header class="header-nav">
       <div class="container header-container">
         <a href="/" style="display: flex; align-items: center; justify-content: center; height: 100%;">
-          <img src="/logo-transparent.png" alt="Nobogent Logo" width="180" height="60" style="height: 60px; width: auto; object-fit: contain;" />
+          <Image src={logoTransparent} alt="Nobogent Logo" width={180} height={60} style="height: 60px; width: auto; object-fit: contain;" />
         </a>
         <div>
           <a href="/" class="btn btn-secondary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">&larr; Back to Home</a>
@@ -92,7 +116,7 @@ import '../styles/global.css';
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-lg);">
           <div>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--spacing-xs);">
-              <img src="/logo-transparent.png" alt="Nobogent Logo" width="192" height="64" style="height: 64px; width: auto; object-fit: contain;" />
+              <Image src={logoTransparent} alt="Nobogent Logo" width={192} height={64} style="height: 64px; width: auto; object-fit: contain;" />
             </div>
             <p style="color: var(--color-mute); max-width: 250px;">Bypass cookie blocks, auto-design ad layouts, and deploy Meta Conversion CRM engines on autopilot.</p>
           </div>
