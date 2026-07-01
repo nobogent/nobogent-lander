@@ -1,0 +1,777 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobogent AI - Go-To-Market Strategy</title>
+    <meta name="description" content="Explore Nobogent's Go-To-Market (GTM) strategy, community-led growth model, and interactive WhatsApp funnel economics simulator." />
+    <link rel="icon" type="image/png" href="/logo-transparent.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Consent Management script (GDPR/CCPA/ePrivacy Compliant) -->
+    <script is:inline>
+      (function() {
+        var storageKey = 'nobogent_cookie_consent';
+        
+        function loadTracking() {
+          // 1. Load Meta Pixel
+          if (!window.fbq) {
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1684055349552829');
+            fbq('track', 'PageView');
+          }
+          
+          // 2. Load Google Tag Manager
+          if (!window.dataLayer) {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W79WBBRP');
+          }
+        }
+        
+        window.nobogentAcceptConsent = function() {
+          try {
+            localStorage.setItem(storageKey, 'accepted');
+          } catch(e) {}
+          loadTracking();
+        };
+
+        window.nobogentDeclineConsent = function() {
+          try {
+            localStorage.setItem(storageKey, 'declined');
+          } catch(e) {}
+        };
+        
+        var consent = null;
+        try {
+          consent = localStorage.getItem(storageKey);
+        } catch(e) {}
+        
+        if (consent === 'accepted') {
+          window.addEventListener('load', function() {
+            setTimeout(loadTracking, 1500);
+          });
+        } else if (consent !== 'declined') {
+          window.addEventListener('DOMContentLoaded', function() {
+            var banner = document.getElementById('cookieConsentBanner');
+            var acceptBtn = document.getElementById('acceptCookies');
+            var declineBtn = document.getElementById('declineCookies');
+            
+            if (banner) {
+              setTimeout(function() {
+                banner.classList.add('show');
+              }, 1200);
+            }
+            
+            if (acceptBtn) {
+              acceptBtn.addEventListener('click', function() {
+                window.nobogentAcceptConsent();
+                if (banner) banner.classList.remove('show');
+              });
+            }
+            
+            if (declineBtn) {
+              declineBtn.addEventListener('click', function() {
+                window.nobogentDeclineConsent();
+                if (banner) banner.classList.remove('show');
+              });
+            }
+          });
+        }
+      })();
+    </script>
+
+    <style is:global>
+        :root {
+            --bg-color: #f1f5f9;
+            --slide-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* --- Presentation Container --- */
+        .presentation-wrapper {
+            width: 100vw;
+            max-width: 1100px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--slide-bg);
+            position: relative;
+        }
+
+        @media (min-width: 769px) {
+            .presentation-wrapper {
+                width: 95vw;
+                height: 90vh;
+                border-radius: 12px;
+                box-shadow: var(--shadow);
+            }
+        }
+
+        /* --- Slides --- */
+        .slide-container {
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            padding: clamp(1.5rem, 4vw, 4rem);
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Typography --- */
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.2; }
+        h1 span { color: var(--primary); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 600; color: var(--text-main); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-light); }
+        h3 { font-size: clamp(1.1rem, 3vw, 1.25rem); font-weight: 600; color: var(--text-main); margin-bottom: 1rem; }
+        p, ul { font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.6; color: var(--text-muted); margin-bottom: 1.25rem; }
+        ul { padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        strong { color: var(--text-main); font-weight: 600; }
+        
+        .subtitle { font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--text-main); font-weight: 400; margin-bottom: 2rem; line-height: 1.4; }
+
+        /* --- Layout & Cards --- */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: clamp(1rem, 3vw, 1.5rem);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .highlight-card {
+            background: var(--primary-light);
+            border: 1px solid #bfdbfe;
+        }
+
+        .flow-diagram { text-align: center; margin: 1rem 0; display: flex; flex-direction: column; align-items: center; }
+        .flow-diagram.horizontal { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .flow-step { background: #f8fafc; border: 1px solid var(--border-color); padding: 0.75rem 1rem; border-radius: 6px; font-weight: 500; font-size: 0.95rem; width: 100%; max-width: 300px;}
+        .flow-diagram.horizontal .flow-step { width: auto; }
+        .flow-arrow { color: var(--primary); font-size: 1.25rem; margin: 0.25rem 0; }
+        .flow-diagram.horizontal .flow-arrow { transform: rotate(-90deg); margin: 0 0.5rem; }
+
+        @media (min-width: 768px) {
+            .flow-diagram.horizontal .flow-arrow { transform: none; }
+        }
+
+        /* --- Interactive Calculator --- */
+        .calculator-wrapper {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: clamp(1rem, 3vw, 2rem);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .calculator-wrapper { grid-template-columns: 1fr 1fr; }
+        }
+
+        .preset-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .preset-btn {
+            background: #ffffff; border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500;
+            color: var(--text-muted); cursor: pointer; transition: all 0.2s; flex: 1; text-align: center;
+        }
+        .preset-btn:hover { background: #f1f5f9; }
+        .preset-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+
+        .calc-input-group { margin-bottom: 1rem; }
+        .calc-input-group label { display: flex; justify-content: space-between; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-main); }
+        .calc-input-group label span { color: var(--primary); font-weight: 600; }
+        
+        input[type=range] { width: 100%; accent-color: var(--primary); cursor: pointer; }
+
+        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .metric-box {
+            background: #ffffff; border: 1px solid var(--border-color);
+            padding: 1rem; border-radius: 8px; text-align: center;
+        }
+        .metric-box.primary-metric { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+        .metric-box span { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+        .metric-box.primary-metric span { color: #bfdbfe; }
+        .metric-box strong { display: block; font-size: clamp(1.2rem, 3vw, 1.75rem); font-weight: 700; color: var(--text-main); }
+        .metric-box.primary-metric strong { color: #ffffff; }
+
+        /* --- Tables --- */
+        .table-container { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; min-width: 400px; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+        th { font-weight: 600; color: var(--text-main); background: #f8fafc; }
+        td { color: var(--text-muted); }
+
+        /* --- Footer Navigation --- */
+        .footer-nav {
+            padding: 1rem clamp(1rem, 4vw, 4rem);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: #ffffff; border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem;
+            font-weight: 500; color: var(--text-main); cursor: pointer; transition: 0.2s;
+        }
+        .nav-btn:hover:not(:disabled) { background: #f8fafc; border-color: #cbd5e1; }
+        .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        .slide-counter { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-align: center; }
+
+        @media (max-width: 400px) {
+            .slide-counter { width: 100%; order: -1; margin-bottom: 5px; } 
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px;}
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W79WBBRP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1684055349552829&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-banner">
+      <p>
+        We use cookies to optimize site experience, analyze analytics traffic, and personalize ads. You can accept or decline non-essential cookies. Read our <a href="/privacy-policy">Privacy Policy</a> to learn more.
+      </p>
+      <div class="cookie-banner-actions">
+        <button id="declineCookies" class="cookie-btn cookie-btn-decline">Decline</button>
+        <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept All</button>
+      </div>
+    </div>
+
+    <div class="presentation-wrapper">
+        
+        <div class="slide-container">
+            
+            <div class="slide active" id="slide-1">
+                <div style="margin: auto 0; text-align: center; width: 100%;">
+                    <p style="color: var(--primary); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem;">Investor Pitch Deck</p>
+                    <h1>Nobogent<span>AI</span></h1>
+                    <p class="subtitle">Building the AI Marketing Operating System for Local Businesses</p>
+                    
+                    <div class="card highlight-card" style="display: inline-block; margin: 0 auto; text-align: center;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Our Vision</h3>
+                        <p style="margin: 0; color: var(--text-main); font-weight: 500;">Acquire Once &rarr; Educate Daily &rarr; Convert Continuously</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>The Problem</h2>
+                <p>Most local businesses struggle with marketing because they are forced to manage highly fragmented tools and external agencies.</p>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>A Typical Business Needs:</h3>
+                        <ul>
+                            <li>CRM & Lead Management</li>
+                            <li>AI Content & Video Generation</li>
+                            <li>Meta Ads Management</li>
+                            <li>Landing Page Builders</li>
+                            <li>Social Media Management</li>
+                            <li>Inventory management</li>
+                            <li>Whatsapp Automations</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Their Current Options:</h3>
+                        <ul>
+                            <li>Hire expensive, slow marketing agencies.</li>
+                            <li>Hire multiple full-time employees.</li>
+                            <li>Patch together 8–10 disconnected software products.</li>
+                        </ul>
+                        <div class="highlight-card" style="padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                            <strong style="color: #b91c1c;">The Result:</strong> Marketing remains expensive, inefficient, and difficult to scale.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Our Solution</h2>
+                <p><strong>Nobogent AI combines everything into one unified, AI-powered marketing OS.</strong></p>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Platform Capabilities</h3>
+                        <ul>
+                            <li>Generate marketing creatives and AI videos instantly.</li>
+                            <li>Manage leads and track end-to-end campaign ROI.</li>
+                            <li>Launch Meta Ads and build landing pages seamlessly.</li>
+                            <li>Automate follow-ups and manage WhatsApp conversations.</li>
+                            <li>Optimize overall marketing performance using AI.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Industry Agnostic</h3>
+                        <p style="margin-bottom: 0.5rem;">Engineered to work for any local business model, including:</p>
+                        <ul>
+                            <li>Real Estate Agencies & Car Dealerships</li>
+                            <li>Salons, Spas & Clinics</li>
+                            <li>Educational Institutes & Coaching Centers</li>
+                            <li>Dentists, Chiropractors & Healthcare</li>
+                            <li>Gyms & Restaurants</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Go-To-Market Strategy</h2>
+                <div class="grid-2">
+                    <div>
+                        <h3>Education-First Acquisition</h3>
+                        <p>Instead of selling software immediately, we educate first to build trust.</p>
+                        <div class="flow-diagram">
+                            <div class="flow-step">Meta Click-to-WhatsApp Ads</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step">Automated WA Conversation</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step highlight-card" style="border: 1px solid var(--primary);">WhatsApp Community</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step">Daily YouTube Live Training</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step">Free Trial &rarr; Paid Sub</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Why WhatsApp?</h3>
+                        <p>India has one of the world's highest WhatsApp adoption rates. Almost every business owner uses it natively.</p>
+                        <p>Instead of creating friction by asking prospects to fill out long lead forms, book discovery calls, or download clunky software, we ask them to perform the easiest possible action.</p>
+                        <div class="card highlight-card">
+                            <strong>We simply ask them to message us on WhatsApp.</strong>
+                            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">This dramatically reduces our top-of-funnel acquisition friction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Community-Led Growth</h2>
+                <p>Every new lead joins a WhatsApp community. Instead of a one-off webinar, the community delivers value <strong>every single day</strong> via marketing tips, AI tutorials, and success stories.</p>
+                
+                <h3 style="margin-top: 1rem;">The 7-Day Live Onboarding</h3>
+                <p>Each live session encourages attendees to complete one meaningful action inside the software to drive immediate product adoption.</p>
+                
+                <div class="grid-3">
+                    <div class="card" style="text-align: center;"><strong>Day 1:</strong> Create account</div>
+                    <div class="card" style="text-align: center;"><strong>Day 2:</strong> Upload asset</div>
+                    <div class="card" style="text-align: center;"><strong>Day 3:</strong> Generate AI creative</div>
+                    <div class="card" style="text-align: center;"><strong>Day 4:</strong> Generate AI video</div>
+                    <div class="card" style="text-align: center;"><strong>Day 5:</strong> Launch Meta Ad</div>
+                    <div class="card" style="text-align: center;"><strong>Day 6:</strong> Automate WA</div>
+                </div>
+                <div class="card highlight-card" style="margin-top: 1rem; text-align: center;">
+                    <strong style="color: var(--primary);">Day 7: Review campaign performance & upgrade to Paid Subscription</strong>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Funnel Economics</h2>
+                <p>Test our planning assumptions and unit economics for the India-first launch below.</p>
+                
+                <div class="preset-controls">
+                    <button class="preset-btn" id="btnConservative" onclick="applyPreset('conservative')">Conservative</button>
+                    <button class="preset-btn active" id="btnAverage" onclick="applyPreset('average')">Average</button>
+                    <button class="preset-btn" id="btnIdeal" onclick="applyPreset('ideal')">Ideal</button>
+                </div>
+
+                <div class="calculator-wrapper">
+                    <div class="calc-inputs">
+                        <div class="calc-input-group">
+                            <label>Cost per WA Join: <span id="valCPA">₹40</span></label>
+                            <input type="range" id="inpCPA" min="10" max="150" value="40" step="5">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Target Group Size: <span id="valGroup">1,000</span></label>
+                            <input type="range" id="inpGroup" min="500" max="5000" value="1000" step="100">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Live Attendance: <span id="valAtt">50%</span></label>
+                            <input type="range" id="inpAtt" min="10" max="80" value="50" step="5">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Trial Conversion: <span id="valTrial">25%</span></label>
+                            <input type="range" id="inpTrial" min="5" max="50" value="25" step="1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Paid Conversion: <span id="valPaid">30%</span></label>
+                            <input type="range" id="inpPaid" min="5" max="60" value="30" step="1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Subscription / Mo: <span id="valSub">₹9,999</span></label>
+                            <input type="range" id="inpSub" min="2999" max="19999" value="9999" step="1000">
+                        </div>
+                    </div>
+                    
+                    <div class="calc-outputs">
+                        <div class="metrics-grid" style="margin-bottom: 1rem;">
+                            <div class="metric-box">
+                                <span>Ad Spend</span>
+                                <strong id="outSpend">₹40K</strong>
+                            </div>
+                            <div class="metric-box">
+                                <span>Customers</span>
+                                <strong id="outCust">38</strong>
+                            </div>
+                        </div>
+                        <div class="metric-box" style="margin-bottom: 1rem;">
+                            <span>Customer Acquisition Cost (CAC)</span>
+                            <strong id="outCAC">₹1,053</strong>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-box primary-metric">
+                                <span>MRR</span>
+                                <strong id="outMRR">₹3.8 L</strong>
+                            </div>
+                            <div class="metric-box primary-metric">
+                                <span>ARR</span>
+                                <strong id="outARR">₹45.6 L</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Revenue Projections</h2>
+                <p>Based on our standard software-as-a-service model, assuming an average subscription price of ₹9,999/month.</p>
+                
+                <div class="card table-container" style="padding: 0; margin-top: 1rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customers</th>
+                                <th>Monthly Recurring (MRR)</th>
+                                <th>Annual Recurring (ARR)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100</td>
+                                <td>≈ ₹10 Lakh</td>
+                                <td>≈ ₹1.2 Crore</td>
+                            </tr>
+                            <tr>
+                                <td>500</td>
+                                <td>≈ ₹50 Lakh</td>
+                                <td>≈ ₹6 Crore</td>
+                            </tr>
+                            <tr style="background: var(--primary-light);">
+                                <td><strong>1,000</strong></td>
+                                <td><strong style="color: var(--primary);">≈ ₹1 Crore</strong></td>
+                                <td><strong style="color: var(--primary);">≈ ₹12 Crore</strong></td>
+                            </tr>
+                            <tr>
+                                <td>5,000</td>
+                                <td>≈ ₹5 Crore</td>
+                                <td>≈ ₹60 Crore</td>
+                            </tr>
+                            <tr>
+                                <td>10,000</td>
+                                <td>≈ ₹10 Crore</td>
+                                <td>≈ ₹120 Crore</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Why This Compounds</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Traditional Funnels</h3>
+                        <div class="flow-diagram">
+                            <div class="flow-step">Ad &rarr; Form &rarr; Call</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <strong style="color: #b91c1c;">Buy or Disappear</strong>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">Relationship ends quickly. Constant reinvestment required.</p>
+                    </div>
+                    <div class="card highlight-card">
+                        <h3 style="color: var(--primary);">Our Model (Education)</h3>
+                        <div class="flow-diagram">
+                            <div class="flow-step" style="border-color: var(--primary);">Ad &rarr; WA Community</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <div class="flow-step" style="border-color: var(--primary);">Daily Ed &rarr; Trial</div>
+                            <div class="flow-arrow">&darr;</div>
+                            <strong style="color: var(--primary);">Paid &rarr; Continued Ed</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 1.5rem; text-align: center; border-color: var(--primary);">
+                    <p style="margin: 0; font-size: 1rem;"><strong>A single customer acquisition cost creates multiple opportunities to convert the same prospect over time.</strong></p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Expansion Strategy</h2>
+                <p>The core software architecture remains identical. To scale across verticals, we only change the templates, AI prompts, and workflows.</p>
+                
+                <div class="flow-diagram horizontal" style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin: 1.5rem 0;">
+                    <div class="flow-step">1. Real Estate</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step">2. Salons</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step">3. Clinics</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step">4. Auto</div>
+                </div>
+
+                <div class="card">
+                    <h3>Long-Term Vision</h3>
+                    <p style="margin:0;">Nobogent AI is not intended to be just "another CRM." Our definitive goal is to become the underlying <strong>AI Marketing Operating System</strong> for local businesses everywhere.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>Metrics & Assumptions</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Core Scorecard</h3>
+                        <ul style="margin-bottom: 0;">
+                            <li><strong>Acquisition:</strong> Cost per WA group join.</li>
+                            <li><strong>Engagement:</strong> Live session attendance.</li>
+                            <li><strong>Activation:</strong> Trial sign-ups & milestones.</li>
+                            <li><strong>Financials:</strong> Trial-to-paid, CAC, Churn, LTV.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Validation & Risks</h3>
+                        <p style="margin-bottom: 0.5rem;">The presented funnel metrics are baseline hypotheses. Real-world validation relies on:</p>
+                        <ul style="margin-bottom: 0;">
+                            <li>Maintaining low-cost Ad creative scaling.</li>
+                            <li>Sustaining high WA engagement over time.</li>
+                            <li>Achieving strict product-market fit.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h2>The WhatsApp Advantage</h2>
+                <p>Why this strategy provides a distinct competitive moat.</p>
+                
+                <div class="grid-3">
+                    <div class="card">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem;">1. Trust Building</h3>
+                        <p style="font-size: 0.9rem; margin: 0;">Trust is built through daily education rather than high-pressure outbound sales.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem;">2. SaaS Scalability</h3>
+                        <p style="font-size: 0.9rem; margin: 0;">High margin scalability resulting from low reliance on expensive sales teams.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem;">3. Community Loyalty</h3>
+                        <p style="font-size: 0.9rem; margin: 0;">Fosters a peer-to-peer learning environment that dramatically increases stickiness.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem;">4. Harder to Replicate</h3>
+                        <p style="font-size: 0.9rem; margin: 0;">Competitors can clone features, but an active community creates a strong defensive moat.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem;">5. Social Proof</h3>
+                        <p style="font-size: 0.9rem; margin: 0;">Public success stories shared within the group organically drive FOMO and conversions.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.25rem;">6. Content Assets</h3>
+                        <p style="font-size: 0.9rem; margin: 0;">Every live session generates a vast library of reusable collateral for top-of-funnel acquisition.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-nav">
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>Previous</button>
+            <div class="slide-counter" id="progressText">Slide 1 of 11</div>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next Slide</button>
+        </div>
+
+    </div>
+
+    <script is:inline>
+        // --- Slide Navigation Logic ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressText = document.getElementById('progressText');
+
+        function updateDeck() {
+            slides.forEach((slide, index) => {
+                if(index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            
+            prevBtn.disabled = currentSlide === 0;
+            if (currentSlide === slides.length - 1) {
+                nextBtn.innerText = "Finish";
+                nextBtn.disabled = true;
+            } else {
+                nextBtn.innerText = "Next Slide";
+                nextBtn.disabled = false;
+            }
+            progressText.innerText = `Slide ${currentSlide + 1} of ${slides.length}`;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+            updateDeck();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+
+        // --- Interactive Calculator Logic ---
+        const formatCurrency = (num) => {
+            if (num >= 10000000) return '₹' + (num / 10000000).toFixed(2) + ' Cr';
+            if (num >= 100000) return '₹' + (num / 100000).toFixed(1) + ' L';
+            return '₹' + num.toLocaleString('en-IN');
+        };
+        const formatK = (num) => {
+            if (num >= 1000) return '₹' + (num / 1000).toFixed(0) + 'K';
+            return '₹' + num;
+        };
+
+        function calculateFunnel() {
+            const cpa = parseFloat(document.getElementById('inpCPA').value);
+            const groupSize = parseFloat(document.getElementById('inpGroup').value);
+            const attRate = parseFloat(document.getElementById('inpAtt').value) / 100;
+            const trialRate = parseFloat(document.getElementById('inpTrial').value) / 100;
+            const paidRate = parseFloat(document.getElementById('inpPaid').value) / 100;
+            const subPrice = parseFloat(document.getElementById('inpSub').value);
+
+            document.getElementById('valCPA').innerText = '₹' + cpa;
+            document.getElementById('valGroup').innerText = groupSize.toLocaleString('en-IN');
+            document.getElementById('valAtt').innerText = (attRate * 100).toFixed(0) + '%';
+            document.getElementById('valTrial').innerText = (trialRate * 100).toFixed(0) + '%';
+            document.getElementById('valPaid').innerText = (paidRate * 100).toFixed(0) + '%';
+            document.getElementById('valSub').innerText = '₹' + subPrice.toLocaleString('en-IN');
+
+            const adSpend = cpa * groupSize;
+            const attendees = groupSize * attRate;
+            const trials = attendees * trialRate;
+            const customers = Math.round(trials * paidRate);
+            const cac = customers > 0 ? (adSpend / customers) : 0;
+            const mrr = customers * subPrice;
+            const arr = mrr * 12;
+
+            document.getElementById('outSpend').innerText = formatK(adSpend);
+            document.getElementById('outCust').innerText = customers.toLocaleString('en-IN');
+            document.getElementById('outCAC').innerText = cac > 0 ? '₹' + Math.round(cac).toLocaleString('en-IN') : 'N/A';
+            document.getElementById('outMRR').innerText = formatCurrency(mrr);
+            document.getElementById('outARR').innerText = formatCurrency(arr);
+        }
+
+        const presets = {
+            conservative: { cpa: 60, group: 1000, att: 30, trial: 15, paid: 20, sub: 9999 },
+            average: { cpa: 40, group: 1000, att: 50, trial: 25, paid: 30, sub: 9999 },
+            ideal: { cpa: 25, group: 2000, att: 65, trial: 35, paid: 40, sub: 9999 }
+        };
+
+        window.applyPreset = function(type) {
+            document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn' + type.charAt(0).toUpperCase() + type.slice(1)).classList.add('active');
+
+            const data = presets[type];
+            document.getElementById('inpCPA').value = data.cpa;
+            document.getElementById('inpGroup').value = data.group;
+            document.getElementById('inpAtt').value = data.att;
+            document.getElementById('inpTrial').value = data.trial;
+            document.getElementById('inpPaid').value = data.paid;
+            document.getElementById('inpSub').value = data.sub;
+
+            calculateFunnel();
+        }
+
+        document.querySelectorAll('.calc-inputs input').forEach(input => {
+            input.addEventListener('input', () => {
+                document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+                calculateFunnel();
+            });
+        });
+
+        // Initialize
+        updateDeck();
+        calculateFunnel();
+    </script>
+</body>
+</html>
