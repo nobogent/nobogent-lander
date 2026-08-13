@@ -530,6 +530,45 @@
             color: var(--gray);
         }
 
+        /* Guarantee & ROI Styles */
+        .guarantee-badge {
+            background: linear-gradient(135deg, #137333, #34a853);
+            color: white;
+            padding: 1rem 2.2rem;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(52, 168, 83, 0.25);
+            margin-bottom: 1.2rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .roi-stat {
+            font-size: 2.2rem;
+            font-weight: 800;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .roi-math-box {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 1.8rem;
+            border: 2px solid #c4eed0;
+            margin-top: 1.5rem;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(52, 168, 83, 0.06);
+        }
+
+        .tc-note {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             h1 { font-size: 2.4rem; }
@@ -803,6 +842,103 @@
                             Visit Nobogent.com
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: 1-Deal ROI -->
+        <div class="slide">
+            <div class="slide-wrapper">
+                <div class="card" style="max-width: 1050px;">
+                    <h2>Close <span class="highlight-green">Just 1 Extra Deal</span></h2>
+                    <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 1.5rem auto;">
+                        In real estate, a single closed deal covers your entire 1-year Nobogent subscription multiple times over.
+                    </p>
+
+                    <div class="grid-3" style="margin-top: 1.5rem;">
+                        <div class="bubbly-box bg-green" style="text-align: center;">
+                            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🏠</div>
+                            <h3 style="color: var(--dark); font-size: 1.2rem;">Avg. Deal Commission</h3>
+                            <div class="roi-stat" style="color: var(--dark); margin: 0.5rem 0;">₹1.5L – ₹5L+</div>
+                            <p style="font-size: 0.95rem; margin: 0;">Earnings from just 1 successful property transaction.</p>
+                        </div>
+                        <div class="bubbly-box bg-blue" style="text-align: center;">
+                            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">💳</div>
+                            <h3 style="color: var(--dark); font-size: 1.2rem;">Nobogent Annual Plan</h3>
+                            <div class="roi-stat" style="color: var(--primary); margin: 0.5rem 0;">₹60k / ₹1.20L</div>
+                            <p style="font-size: 0.95rem; margin: 0;">Complete AI Sales & Marketing Department for 365 days.</p>
+                        </div>
+                        <div class="bubbly-box bg-yellow" style="text-align: center;">
+                            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📈</div>
+                            <h3 style="color: var(--dark); font-size: 1.2rem;">Instant Net ROI</h3>
+                            <div class="roi-stat" style="color: #b06000; margin: 0.5rem 0;">100% – 300%+</div>
+                            <p style="font-size: 0.95rem; margin: 0;">Your annual subscription pays for itself with 1 deal!</p>
+                        </div>
+                    </div>
+
+                    <div class="roi-math-box">
+                        <h3 style="color: var(--dark); font-size: 1.35rem; margin-bottom: 0.5rem;">💡 The No-Brainer Real Estate Math</h3>
+                        <p style="font-size: 1.15rem; color: var(--dark); margin: 0; line-height: 1.6;">
+                            Our AI handles 24/7 lead generation, instant WhatsApp qualification, retargeting & automated calling. 
+                            If it helps you convert <strong>even ONE extra client</strong> out of hundreds of leads this year, <strong>it pays for itself for more than a full year</strong>. Every additional deal after that is 100% net profit!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: 30-Day Money Back Guarantee -->
+        <div class="slide">
+            <div class="slide-wrapper">
+                <div class="card" style="max-width: 1050px;">
+                    <div class="guarantee-badge">
+                        <span>🛡️ 30-Day Money Back Guarantee</span>
+                    </div>
+                    <h2>100% Risk-Free <span class="highlight-blue">Investment</span></h2>
+                    <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 1.5rem auto;">
+                        Try Nobogent risk-free. If our AI system doesn't transform your real estate pipeline within 30 days, get a full refund — <strong>no questions asked</strong>.*
+                    </p>
+
+                    <div class="pricing-grid" style="margin-top: 1rem;">
+                        <!-- Package 1: 60k -->
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3>Standard Annual</h3>
+                                <div class="plan-tag">Annual Plan • 30-Day Guarantee</div>
+                                <div class="plan-price">₹60,000 <span class="gst-text">+ GST / year</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>📹 <strong>10 Videos</strong> + 🖼️ <strong>50 Images</strong> + 👥 <strong>5 Users</strong></li>
+                                <li>🤖 WhatsApp Bot & Built-in CRM</li>
+                                <li>📢 1-Click Social Ads & Website Builder</li>
+                                <li>🛡️ <strong>Backed by 30-Day Money Back Guarantee</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- Package 2: 1.20L -->
+                        <div class="plan-card plan-popular">
+                            <div class="popular-badge">30 DAYS RISK-FREE</div>
+                            <div class="plan-header">
+                                <h3>Pro AI Annual</h3>
+                                <div class="plan-tag">Annual Plan • 30-Day Guarantee</div>
+                                <div class="plan-price highlight-blue">₹1.20 Lakhs <span class="gst-text">+ GST / year</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>✨ <strong>All Features in Standard Package</strong></li>
+                                <li>📞 <strong>500 Mins / Month</strong> AI Voice Calling</li>
+                                <li>💰 <strong>₹6,000 Saving</strong> on Virtual Number (Included FREE)</li>
+                                <li>🤖 Full Autonomous AI Telecaller & Qualification</li>
+                                <li>🛡️ <strong>Backed by 30-Day Money Back Guarantee</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="https://nobogent.com" target="_blank" class="btn" style="display: inline-flex; padding: 14px 40px; font-size: 1.15rem; text-decoration: none; border-radius: 100px;">
+                            Claim Risk-Free Access at Nobogent.com
+                        </a>
+                    </div>
+                    <p class="tc-note">* T&C's Apply</p>
                 </div>
             </div>
         </div>
