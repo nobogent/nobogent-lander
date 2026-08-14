@@ -435,11 +435,11 @@
             border: 2px solid #aecbfa;
         }
 
-        /* Annual Packages Pricing Grid */
+        /* Pricing Grid */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
             margin-top: 1.5rem;
             text-align: left;
         }
@@ -447,7 +447,7 @@
         .plan-card {
             background: white;
             border-radius: var(--radius-sm);
-            padding: 2.2rem;
+            padding: 2rem 1.4rem;
             border: 2px solid rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
@@ -469,19 +469,19 @@
 
         .popular-badge {
             position: absolute;
-            top: -14px;
-            right: 24px;
+            top: -13px;
+            right: 18px;
             background: var(--primary);
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
-            padding: 4px 14px;
+            padding: 4px 12px;
             border-radius: 50px;
             letter-spacing: 0.05em;
         }
 
         .plan-header h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--dark);
             margin-bottom: 0.3rem;
         }
@@ -490,23 +490,23 @@
             display: inline-block;
             background: #f1f3f4;
             color: var(--gray);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             padding: 3px 10px;
             border-radius: 12px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .plan-price {
-            font-size: 2.4rem;
+            font-size: 2.1rem;
             font-weight: 800;
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--dark);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .gst-text {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--gray);
         }
@@ -515,14 +515,14 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.9rem;
-            font-size: 1.05rem;
+            gap: 0.75rem;
+            font-size: 0.95rem;
             color: var(--dark);
             margin-top: 0.5rem;
         }
 
         .plan-features li {
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
         .feature-disabled {
@@ -570,6 +570,10 @@
         }
 
         /* Mobile Responsiveness */
+        @media (max-width: 960px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.4rem; }
             h2 { font-size: 2rem; }
@@ -586,7 +590,7 @@
             .role-title { font-size: 0.95rem; }
             .role-desc { font-size: 0.8rem; }
             .badge-cost, .badge-included { font-size: 0.8rem; padding: 4px 8px; }
-            .plan-price { font-size: 2rem; }
+            .plan-price { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -786,60 +790,74 @@
             </div>
         </div>
 
-        <!-- Slide 7: Annual Packages -->
+        <!-- Slide 7: Pricing Plans -->
         <div class="slide">
             <div class="slide-wrapper">
-                <div class="card" style="max-width: 1050px;">
-                    <h2>Choose Your <span class="highlight-blue">Annual Package</span></h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">World's First AI Sales & Marketing Department • Annual Subscriptions Only</p>
+                <div class="card" style="max-width: 1150px;">
+                    <h2>Choose Your <span class="highlight-blue">Growth Plan</span></h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">World's First AI Sales & Marketing Department for Real Estate</p>
                     
                     <div class="pricing-grid">
-                        <!-- Package 1: 60k -->
+                        <!-- Plan 1: 1 Month -->
                         <div class="plan-card">
                             <div class="plan-header">
-                                <h3>Standard Annual</h3>
-                                <div class="plan-tag">Annual Plan</div>
-                                <div class="plan-price">₹60,000 <span class="gst-text">+ GST / year</span></div>
+                                <h3>1 Month Plan</h3>
+                                <div class="plan-tag">Monthly Access</div>
+                                <div class="plan-price">₹9,999 <span class="gst-text">+ GST</span></div>
                             </div>
                             <ul class="plan-features">
-                                <li>📹 <strong>10 Custom Videos</strong></li>
-                                <li>🖼️ <strong>50 Marketing Images</strong></li>
-                                <li>👥 <strong>5 User Accounts</strong></li>
-                                <li>⚡ <strong>All Features Included:</strong>
-                                    <ul style="list-style: disc; margin-left: 1.2rem; margin-top: 0.4rem; font-size: 0.95rem; color: var(--gray);">
-                                        <li>Built-in Real Estate CRM</li>
-                                        <li>WhatsApp Automation Bot</li>
-                                        <li>1-Click Social Posting & Ads</li>
-                                        <li>Website Creation & Landing Pages</li>
-                                        <li>Inventory & Appointment Management</li>
-                                    </ul>
-                                </li>
-                                <li class="feature-disabled" style="margin-top: 0.3rem;">❌ <em>Excludes AI Voice Calling</em></li>
+                                <li>✨ <strong>1,500 AI Credits</strong><br><small style="color: var(--gray);">(10 Videos + 50 Marketing Images)</small></li>
+                                <li>🤖 <strong>AI Calling Included</strong><br><small style="color: var(--gray);">(Recharge minutes separately)</small></li>
+                                <li>💬 <strong>WhatsApp Automation Bot</strong></li>
+                                <li>📊 <strong>Built-in Real Estate CRM</strong></li>
+                                <li>📢 <strong>1-Click Ads & Social Posting</strong></li>
+                                <li>🌐 <strong>Landing Pages & Website Creation</strong></li>
+                                <li>👥 <strong>5 Team User Accounts</strong></li>
                             </ul>
                         </div>
 
-                        <!-- Package 2: 1.20L -->
-                        <div class="plan-card plan-popular">
-                            <div class="popular-badge">FULL AI SUITE</div>
+                        <!-- Plan 2: 6 Months -->
+                        <div class="plan-card">
                             <div class="plan-header">
-                                <h3>Pro AI Annual</h3>
-                                <div class="plan-tag">Annual Plan</div>
-                                <div class="plan-price highlight-blue">₹1.20 Lakhs <span class="gst-text">+ GST / year</span></div>
+                                <h3>6 Months Plan</h3>
+                                <div class="plan-tag">Semi-Annual Access</div>
+                                <div class="plan-price">₹54,999 <span class="gst-text">+ GST</span></div>
                             </div>
                             <ul class="plan-features">
-                                <li>✨ <strong>All Features in Standard Package</strong></li>
-                                <li>📹 10 Videos + 🖼️ 50 Images + 👥 5 Users</li>
-                                <li>📞 <strong>500 Mins / Month</strong> AI Voice Calling</li>
-                                <li>💰 <strong>₹6,000 Saving</strong> on Number buying separately<br><small style="color: var(--gray); font-size: 0.85rem;">(Virtual number charges are ₹2,000/month otherwise)</small></li>
-                                <li>🤖 <strong>Full Autonomous AI Telecaller</strong></li>
-                                <li>📱 <strong>Branded Web/Mobile App & WhatsApp Sync</strong></li>
+                                <li>✨ <strong>1,500 AI Credits / month</strong><br><small style="color: var(--gray);">(10 Videos + 50 Images each month)</small></li>
+                                <li>🤖 <strong>AI Calling Included</strong><br><small style="color: var(--gray);">(Recharge minutes separately)</small></li>
+                                <li>💬 <strong>WhatsApp Automation Bot</strong></li>
+                                <li>📊 <strong>Built-in Real Estate CRM</strong></li>
+                                <li>📢 <strong>1-Click Ads & Social Posting</strong></li>
+                                <li>🌐 <strong>Landing Pages & Website Creation</strong></li>
+                                <li>👥 <strong>5 Team User Accounts</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- Plan 3: 12 Months (Annual) -->
+                        <div class="plan-card plan-popular">
+                            <div class="popular-badge">SAVE ₹20,000</div>
+                            <div class="plan-header">
+                                <h3>12 Months Plan</h3>
+                                <div class="plan-tag highlight-blue" style="background: var(--primary-light); font-weight: 700;">Annual • Best Value</div>
+                                <div class="plan-price highlight-blue">₹99,999 <span class="gst-text">+ GST</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>💰 <strong style="color: var(--success);">₹20,000 Massive Savings</strong></li>
+                                <li>✨ <strong>1,500 AI Credits each month</strong><br><small style="color: var(--gray);">(10 Videos + 50 Images each month)</small></li>
+                                <li>🤖 <strong>AI Calling Included</strong><br><small style="color: var(--gray);">(Recharge minutes separately)</small></li>
+                                <li>💬 <strong>WhatsApp Automation Bot</strong></li>
+                                <li>📊 <strong>Built-in Real Estate CRM</strong></li>
+                                <li>📢 <strong>1-Click Ads & Social Posting</strong></li>
+                                <li>🌐 <strong>Landing Pages & Website Creation</strong></li>
+                                <li>👥 <strong>5 Team User Accounts</strong></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div style="margin-top: 2.5rem;">
+                    <div style="margin-top: 2rem;">
                         <a href="https://nobogent.com" target="_blank" class="btn" style="display: inline-flex; padding: 14px 40px; font-size: 1.15rem; text-decoration: none; border-radius: 100px;">
-                            Visit Nobogent.com
+                            Get Started at Nobogent.com
                         </a>
                     </div>
                 </div>
@@ -852,7 +870,7 @@
                 <div class="card" style="max-width: 1050px;">
                     <h2>Close <span class="highlight-green">Just 1 Extra Deal</span></h2>
                     <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 1.5rem auto;">
-                        In real estate, a single closed deal covers your entire 1-year Nobogent subscription multiple times over.
+                        In real estate, a single closed deal covers your entire Nobogent subscription multiple times over.
                     </p>
 
                     <div class="grid-3" style="margin-top: 1.5rem;">
@@ -864,15 +882,15 @@
                         </div>
                         <div class="bubbly-box bg-blue" style="text-align: center;">
                             <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">💳</div>
-                            <h3 style="color: var(--dark); font-size: 1.2rem;">Nobogent Annual Plan</h3>
-                            <div class="roi-stat" style="color: var(--primary); margin: 0.5rem 0;">₹60k / ₹1.20L</div>
+                            <h3 style="color: var(--dark); font-size: 1.2rem;">Nobogent 1-Year Plan</h3>
+                            <div class="roi-stat" style="color: var(--primary); margin: 0.5rem 0;">₹99,999</div>
                             <p style="font-size: 0.95rem; margin: 0;">Complete AI Sales & Marketing Department for 365 days.</p>
                         </div>
                         <div class="bubbly-box bg-yellow" style="text-align: center;">
                             <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📈</div>
                             <h3 style="color: var(--dark); font-size: 1.2rem;">Instant Net ROI</h3>
                             <div class="roi-stat" style="color: #b06000; margin: 0.5rem 0;">100% – 300%+</div>
-                            <p style="font-size: 0.95rem; margin: 0;">Your annual subscription pays for itself with 1 deal!</p>
+                            <p style="font-size: 0.95rem; margin: 0;">Your subscription pays for itself with just 1 deal!</p>
                         </div>
                     </div>
 
@@ -880,7 +898,7 @@
                         <h3 style="color: var(--dark); font-size: 1.35rem; margin-bottom: 0.5rem;">💡 The No-Brainer Real Estate Math</h3>
                         <p style="font-size: 1.15rem; color: var(--dark); margin: 0; line-height: 1.6;">
                             Our AI handles 24/7 lead generation, instant WhatsApp qualification, retargeting & automated calling. 
-                            If it helps you convert <strong>even ONE extra client</strong> out of hundreds of leads this year, <strong>it pays for itself for more than a full year</strong>. Every additional deal after that is 100% net profit!
+                            If it helps you convert <strong>even ONE extra client</strong> out of hundreds of leads this year, <strong>it pays for itself multiple times over</strong>. Every additional deal after that is 100% net profit!
                         </p>
                     </div>
                 </div>
@@ -890,7 +908,7 @@
         <!-- Slide 9: 30-Day Money Back Guarantee -->
         <div class="slide">
             <div class="slide-wrapper">
-                <div class="card" style="max-width: 1050px;">
+                <div class="card" style="max-width: 1150px;">
                     <div class="guarantee-badge">
                         <span>🛡️ 30-Day Money Back Guarantee</span>
                     </div>
@@ -900,35 +918,53 @@
                     </p>
 
                     <div class="pricing-grid" style="margin-top: 1rem;">
-                        <!-- Package 1: 60k -->
+                        <!-- Plan 1: 1 Month -->
                         <div class="plan-card">
                             <div class="plan-header">
-                                <h3>Standard Annual</h3>
-                                <div class="plan-tag">Annual Plan • 30-Day Guarantee</div>
-                                <div class="plan-price">₹60,000 <span class="gst-text">+ GST / year</span></div>
+                                <h3>1 Month Plan</h3>
+                                <div class="plan-tag">30-Day Guarantee</div>
+                                <div class="plan-price">₹9,999 <span class="gst-text">+ GST</span></div>
                             </div>
                             <ul class="plan-features">
-                                <li>📹 <strong>10 Videos</strong> + 🖼️ <strong>50 Images</strong> + 👥 <strong>5 Users</strong></li>
+                                <li>✨ <strong>1,500 AI Credits</strong> (10 Videos + 50 Images)</li>
+                                <li>🤖 AI Calling Included <small>(recharge mins separately)</small></li>
                                 <li>🤖 WhatsApp Bot & Built-in CRM</li>
-                                <li>📢 1-Click Social Ads & Website Builder</li>
-                                <li>🛡️ <strong>Backed by 30-Day Money Back Guarantee</strong></li>
+                                <li>📢 Ads, Social Posting & Website Builder</li>
+                                <li>🛡️ <strong>Backed by 30-Day Guarantee</strong></li>
                             </ul>
                         </div>
 
-                        <!-- Package 2: 1.20L -->
-                        <div class="plan-card plan-popular">
-                            <div class="popular-badge">30 DAYS RISK-FREE</div>
+                        <!-- Plan 2: 6 Months -->
+                        <div class="plan-card">
                             <div class="plan-header">
-                                <h3>Pro AI Annual</h3>
-                                <div class="plan-tag">Annual Plan • 30-Day Guarantee</div>
-                                <div class="plan-price highlight-blue">₹1.20 Lakhs <span class="gst-text">+ GST / year</span></div>
+                                <h3>6 Months Plan</h3>
+                                <div class="plan-tag">30-Day Guarantee</div>
+                                <div class="plan-price">₹54,999 <span class="gst-text">+ GST</span></div>
                             </div>
                             <ul class="plan-features">
-                                <li>✨ <strong>All Features in Standard Package</strong></li>
-                                <li>📞 <strong>500 Mins / Month</strong> AI Voice Calling</li>
-                                <li>💰 <strong>₹6,000 Saving</strong> on Virtual Number (Included FREE)</li>
-                                <li>🤖 Full Autonomous AI Telecaller & Qualification</li>
-                                <li>🛡️ <strong>Backed by 30-Day Money Back Guarantee</strong></li>
+                                <li>✨ <strong>1,500 AI Credits each month</strong></li>
+                                <li>🤖 AI Calling Included <small>(recharge mins separately)</small></li>
+                                <li>🤖 WhatsApp Bot & Built-in CRM</li>
+                                <li>📢 Ads, Social Posting & Website Builder</li>
+                                <li>🛡️ <strong>Backed by 30-Day Guarantee</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- Plan 3: 12 Months -->
+                        <div class="plan-card plan-popular">
+                            <div class="popular-badge">SAVE ₹20,000</div>
+                            <div class="plan-header">
+                                <h3>12 Months Plan</h3>
+                                <div class="plan-tag highlight-blue" style="background: var(--primary-light); font-weight: 700;">Annual • 30-Day Guarantee</div>
+                                <div class="plan-price highlight-blue">₹99,999 <span class="gst-text">+ GST</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li>💰 <strong style="color: var(--success);">₹20,000 Saving on Annual Plan</strong></li>
+                                <li>✨ <strong>1,500 AI Credits each month</strong></li>
+                                <li>🤖 AI Calling Included <small>(recharge mins separately)</small></li>
+                                <li>🤖 WhatsApp Bot & Built-in CRM</li>
+                                <li>📢 Ads, Social Posting & Website Builder</li>
+                                <li>🛡️ <strong>Backed by 30-Day Guarantee</strong></li>
                             </ul>
                         </div>
                     </div>
