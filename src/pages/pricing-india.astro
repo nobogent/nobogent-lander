@@ -1,0 +1,1957 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logoTransparent from '../assets/logo-transparent.png';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/logo-transparent.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>Nobogent AI vs Traditional Agencies | Feature & Price Comparison (India)</title>
+    <meta name="description" content="Compare Nobogent AI Sales & Marketing Department with traditional Indian real estate digital marketing agencies. See why realtors save ₹60,000+/month with 10x faster lead conversions." />
+    <meta name="keywords" content="nobogent pricing, real estate marketing agency cost india, AI calling real estate, real estate CRM pricing, WhatsApp bot real estate price, real estate lead generation cost india" />
+    <link rel="canonical" href="https://nobogent.com/pricing-india" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/geist-sans" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/geist-mono" rel="stylesheet" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nobogent.com/pricing-india" />
+    <meta property="og:title" content="Nobogent AI vs Indian Digital Marketing Agencies | Pricing & Feature Breakdown" />
+    <meta property="og:description" content="Why pay ₹70,000+/mo for slow agency retainers? Get an instant 30s AI calling department, 24/7 WhatsApp AI concierge, and Meta CAPI ads for ₹9,999/mo." />
+    <meta property="og:image" content="https://nobogent.com/logo-transparent.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Nobogent AI Real Estate Operating System",
+        "image": "https://nobogent.com/logo-transparent.png",
+        "description": "AI-powered real estate marketing and sales automation platform replacing disjointed marketing agencies and manual calling desks.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Nobogent"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "1 Month Growth Plan",
+            "price": "9999",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://nobogent.com/pricing-india"
+          },
+          {
+            "@type": "Offer",
+            "name": "12 Months Annual Plan",
+            "price": "99999",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://nobogent.com/pricing-india"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* Custom styles complementing global.css with Vercel aesthetic */
+      .pricing-hero {
+        padding: var(--spacing-5xl) 0 var(--spacing-3xl);
+        text-align: center;
+        position: relative;
+      }
+
+      .badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: rgba(23, 23, 23, 0.04);
+        border: 1px solid rgba(23, 23, 23, 0.1);
+        border-radius: var(--rounded-pill);
+        font-family: 'Geist Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-ink);
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .badge-pill .pulse-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #10b981;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        animation: pulseGreen 2s infinite;
+      }
+
+      @keyframes pulseGreen {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+      }
+
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-md);
+        margin: var(--spacing-3xl) auto 0;
+        max-width: 1050px;
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-xl);
+        padding: var(--spacing-xl);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      }
+
+      .stat-card {
+        text-align: left;
+        padding: 0 var(--spacing-md);
+        border-right: 1px solid var(--color-hairline);
+      }
+
+      .stat-card:last-child {
+        border-right: none;
+      }
+
+      .stat-num {
+        font-family: 'Plus Jakarta Sans', var(--font-display, sans-serif);
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        color: var(--color-ink);
+        margin-bottom: 4px;
+      }
+
+      .stat-num.highlight {
+        background: linear-gradient(135deg, #0070f3 0%, #7928ca 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-ink);
+        margin-bottom: 2px;
+      }
+
+      .stat-desc {
+        font-size: 11px;
+        color: var(--color-mute);
+        line-height: 1.4;
+      }
+
+      /* Disjointed Agency vs Nobogent Visual Split */
+      .split-compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+        max-width: 1140px;
+        margin: var(--spacing-3xl) auto 0;
+        text-align: left;
+      }
+
+      .cost-stack-card {
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-xl);
+        padding: var(--spacing-2xl);
+        position: relative;
+        box-shadow: 0 12px 36px rgba(0,0,0,0.03);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .cost-stack-card.agency-side {
+        border-top: 4px solid var(--color-error);
+      }
+
+      .cost-stack-card.nobo-side {
+        border-top: 4px solid #0070f3;
+        background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+        box-shadow: 0 20px 50px rgba(0, 112, 243, 0.08);
+      }
+
+      .role-list {
+        list-style: none;
+        padding: 0;
+        margin: var(--spacing-lg) 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .role-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 14px;
+        background: var(--color-canvas-soft);
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-md);
+        font-size: 13px;
+      }
+
+      .role-item .agency-fee {
+        font-family: 'Geist Mono', monospace;
+        font-weight: 600;
+        color: var(--color-error);
+      }
+
+      .role-item .nobo-fee {
+        font-family: 'Geist Mono', monospace;
+        font-weight: 600;
+        color: #10b981;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .grand-total-banner {
+        padding: 16px 20px;
+        border-radius: var(--rounded-lg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: var(--spacing-lg);
+      }
+
+      .grand-total-agency {
+        background: #fff5f5;
+        border: 1px solid rgba(238, 0, 0, 0.2);
+      }
+
+      .grand-total-nobo {
+        background: #f0f7ff;
+        border: 1px solid rgba(0, 112, 243, 0.25);
+      }
+
+      /* Interactive Filter Tabs for Comparison Table */
+      .filter-tabs-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin: var(--spacing-2xl) auto var(--spacing-xl);
+        max-width: 900px;
+      }
+
+      .filter-tab {
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-pill);
+        padding: 8px 18px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--color-body);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .filter-tab:hover {
+        border-color: var(--color-hairline-strong);
+        color: var(--color-ink);
+      }
+
+      .filter-tab.active {
+        background: var(--color-ink);
+        border-color: var(--color-ink);
+        color: #ffffff;
+      }
+
+      /* Detailed Table Styles */
+      .table-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-xl);
+        overflow: hidden;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.03);
+      }
+
+      .comp-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      .comp-table th {
+        background: #fafafa;
+        padding: 16px 20px;
+        font-size: 12px;
+        font-family: 'Geist Mono', monospace;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-mute);
+        border-bottom: 1px solid var(--color-hairline);
+      }
+
+      .comp-table td {
+        padding: 18px 20px;
+        font-size: 13px;
+        border-bottom: 1px solid var(--color-hairline);
+        vertical-align: top;
+      }
+
+      .comp-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .comp-table tr:hover td {
+        background-color: #fafbfc;
+      }
+
+      .feature-col {
+        width: 32%;
+      }
+
+      .agency-col {
+        width: 34%;
+        background-color: rgba(254, 242, 242, 0.35);
+      }
+
+      .nobogent-col {
+        width: 34%;
+        background-color: rgba(240, 247, 255, 0.45);
+      }
+
+      .feature-title {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--color-ink);
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .feature-sub {
+        font-size: 12px;
+        color: var(--color-mute);
+        line-height: 1.5;
+      }
+
+      .category-pill {
+        display: inline-block;
+        font-size: 10px;
+        font-family: 'Geist Mono', monospace;
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: #f0f0f0;
+        color: #555;
+        margin-top: 4px;
+      }
+
+      .cost-tag-agency {
+        display: inline-block;
+        font-family: 'Geist Mono', monospace;
+        font-weight: 700;
+        font-size: 12px;
+        color: var(--color-error);
+        background: #fee2e2;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-bottom: 6px;
+      }
+
+      .cost-tag-nobo {
+        display: inline-block;
+        font-family: 'Geist Mono', monospace;
+        font-weight: 700;
+        font-size: 12px;
+        color: #047857;
+        background: #d1fae5;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-bottom: 6px;
+      }
+
+      /* ROI Calculator */
+      .calc-card {
+        max-width: 980px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-xl);
+        padding: var(--spacing-3xl);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.04);
+      }
+
+      .calc-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: var(--spacing-3xl);
+        align-items: center;
+      }
+
+      .slider-control {
+        margin-top: 12px;
+        width: 100%;
+        accent-color: #0070f3;
+        height: 6px;
+        cursor: pointer;
+      }
+
+      .calc-result-box {
+        background: linear-gradient(135deg, #171717 0%, #262626 100%);
+        color: #ffffff;
+        border-radius: var(--rounded-lg);
+        padding: var(--spacing-2xl);
+        text-align: center;
+        box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+      }
+
+      /* Pricing Plan Cards */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+        max-width: 1140px;
+        margin: var(--spacing-3xl) auto 0;
+        text-align: left;
+      }
+
+      .plan-card {
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-xl);
+        padding: var(--spacing-2xl);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+        border-color: var(--color-hairline-strong);
+      }
+
+      .plan-card.popular {
+        border: 2px solid #0070f3;
+        box-shadow: 0 20px 50px rgba(0, 112, 243, 0.12);
+        background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+      }
+
+      .popular-ribbon {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, #0070f3, #7928ca);
+        color: #ffffff;
+        font-family: 'Geist Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 14px;
+        border-radius: var(--rounded-pill);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
+      }
+
+      .plan-price-num {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: var(--color-ink);
+        line-height: 1;
+        margin: var(--spacing-md) 0 var(--spacing-xs);
+      }
+
+      .plan-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: var(--spacing-xl) 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 13px;
+        color: var(--color-body);
+      }
+
+      .plan-feature-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.4;
+      }
+
+      .check-icon {
+        color: #10b981;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      /* FAQ Accordion */
+      .faq-item {
+        background: #ffffff;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-lg);
+        margin-bottom: 12px;
+        overflow: hidden;
+        transition: border-color 0.2s ease;
+      }
+
+      .faq-item:hover {
+        border-color: var(--color-hairline-strong);
+      }
+
+      .faq-header {
+        padding: 20px 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+
+      .faq-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-ink);
+      }
+
+      .faq-toggle-icon {
+        font-size: 18px;
+        color: var(--color-mute);
+        transition: transform 0.2s ease;
+      }
+
+      .faq-body {
+        padding: 0 24px 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--color-body);
+        display: none;
+      }
+
+      .faq-item.open .faq-body {
+        display: block;
+      }
+
+      .faq-item.open .faq-toggle-icon {
+        transform: rotate(45deg);
+      }
+
+      @media (max-width: 900px) {
+        .stats-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stat-card:nth-child(2) {
+          border-right: none;
+        }
+        .stat-card:nth-child(3) {
+          border-right: 1px solid var(--color-hairline);
+          margin-top: 16px;
+        }
+        .stat-card:nth-child(4) {
+          margin-top: 16px;
+        }
+        .split-compare-grid {
+          grid-template-columns: 1fr;
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .calc-grid {
+          grid-template-columns: 1fr;
+        }
+        .feature-col {
+          width: 100%;
+        }
+        .agency-col, .nobogent-col {
+          display: block;
+          width: 100%;
+        }
+        .table-responsive {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Micro Announcement -->
+    <div style="background-color: var(--color-primary); color: var(--color-on-primary); padding: 8px 16px; font-size: 11px; font-weight: 500; text-align: center; letter-spacing: 0.05em;" class="mono-label">
+      INDIA REAL ESTATE BENCHMARK • SAVE UP TO ₹8.4 LAKHS ANNUALLY VS AGENCY RETAINERS
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header-nav">
+      <div class="container header-container">
+        <a href="/" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+          <Image src={logoTransparent} alt="Nobogent Logo" width={270} style="height: 90px; width: auto; object-fit: contain;" />
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#comparison">Agency vs Nobogent</a></li>
+            <li><a href="#calculator">Savings Calculator</a></li>
+            <li><a href="#full-table">Feature Breakdown</a></li>
+            <li><a href="#plans">Plans & Pricing</a></li>
+            <li><a href="#roi">1-Deal Math</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="https://app.nobogent.com" class="btn btn-secondary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Login</a>
+          <a href="#plans" class="btn btn-primary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <main style="position: relative;">
+      <!-- Hero Mesh Decorator -->
+      <div class="mesh-bg"></div>
+      <div class="grid-overlay"></div>
+
+      <!-- Hero Section -->
+      <section class="pricing-hero">
+        <div class="container">
+          <div class="badge-pill animate-fade-in">
+            <span class="pulse-dot"></span>
+            Agency Benchmark Report • Real Estate India
+          </div>
+
+          <h1 class="display-xl animate-slide-up" style="margin-bottom: var(--spacing-md); max-width: 1050px; margin-left: auto; margin-right: auto; text-wrap: balance;">
+            Why Pay <span style="color: var(--color-error); text-decoration: line-through; text-decoration-color: rgba(238,0,0,0.5);">₹70,000+/mo</span> to Agencies When an AI Department Costs <span style="background: linear-gradient(90deg, #0070f3, #7928ca, #ff0080); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">₹9,999</span>?
+          </h1>
+
+          <p class="animate-slide-up" style="font-size: 18px; color: var(--color-body); max-width: 820px; margin: 0 auto var(--spacing-2xl); text-wrap: balance;">
+            Real estate builders and channel partners in India bleed lakhs on fragmented digital marketing agencies, telecalling salaries, and disconnected SaaS tools. Nobogent replaces 6 full-time agency roles with one unified, 24/7 autonomous AI system.
+          </p>
+
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="#comparison" class="btn btn-primary" style="padding: 12px 28px; font-size: 14px; font-weight: 600;">
+              View Side-by-Side Comparison ↓
+            </a>
+            <a href="#calculator" class="btn btn-secondary" style="padding: 12px 28px; font-size: 14px; font-weight: 600;">
+              Interactive Savings Calculator
+            </a>
+          </div>
+
+          <!-- Stats Strip -->
+          <div class="stats-strip animate-slide-up">
+            <div class="stat-card">
+              <div class="stat-num highlight">85% – 90%</div>
+              <div class="stat-label">Cost Reduction</div>
+              <div class="stat-desc">From ₹70k+/mo to ₹9,999/mo without sacrificing quality.</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">&lt; 30 Sec</div>
+              <div class="stat-label">AI Call Latency</div>
+              <div class="stat-desc">Calls new leads instantly vs 4-12 hr human agency delays.</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">24 / 7 / 365</div>
+              <div class="stat-label">Always On</div>
+              <div class="stat-desc">Zero sick leaves, zero attrition, and zero training churn.</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num highlight">1 Deal</div>
+              <div class="stat-label">Covers Entire Year</div>
+              <div class="stat-desc">Avg real estate commission (₹2L+) pays 2x the annual plan.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cost Breakdown: The 17 Agency Roles Replaced -->
+      <section id="comparison" style="padding: var(--spacing-5xl) 0; background-color: var(--color-canvas-soft); border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline);">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-error); background-color: var(--color-error-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(238,0,0,0.15);">17-IN-1 UNIFIED OPERATING SYSTEM</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">17 Disjointed Agency Invoices vs 1 Nobogent AI Department</h2>
+          <p style="color: var(--color-body); max-width: 780px; margin: 0 auto;">
+            To run a modern high-converting real estate business, builders and brokers currently juggle 17 separate freelancers, agency retainers, and software tools. Here is what that typically costs in India every month:
+          </p>
+
+          <div class="split-compare-grid">
+            <!-- Left: Traditional Indian Agencies (17 Items) -->
+            <div class="cost-stack-card agency-side">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                  <div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: var(--color-ink);">Traditional Agency & Multi-Vendor Stack</h3>
+                    <div style="font-size: 12px; color: var(--color-error); font-weight: 600;">17 Separate Invoices & Overheads</div>
+                  </div>
+                  <span style="background: #fee2e2; color: #b91c1c; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; font-family: 'Geist Mono';">17 FRAGMENTED TOOLS</span>
+                </div>
+                <p style="font-size: 12px; color: var(--color-mute); margin-bottom: var(--spacing-md);">
+                  Estimated average market rates charged by digital agencies, freelancers & software vendors in Mumbai, NCR, Bangalore & Pune:
+                </p>
+
+                <ul class="role-list">
+                  <li class="role-item">
+                    <div>
+                      <strong>🎬 Video Creation & Walkthrough Editing</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Freelance video editor for reels & property tours</div>
+                    </div>
+                    <span class="agency-fee">₹14,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🖼️ Graphic Design & Image Creation</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Graphic designer for project banners & ad creatives</div>
+                    </div>
+                    <span class="agency-fee">₹9,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>✍️ Video Captions & Copywriting</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Copywriter & subtitle animator for engagement</div>
+                    </div>
+                    <span class="agency-fee">₹5,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📊 Real Estate CRM Software</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">LeadSquared / Sell.do / Salesforce licenses</div>
+                    </div>
+                    <span class="agency-fee">₹7,500 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📢 Meta Ads Management Agency</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Performance marketing agency retainer</div>
+                    </div>
+                    <span class="agency-fee">₹16,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🎯 Retargeting Ads Management</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Custom audience pixels & server CAPI setup fees</div>
+                    </div>
+                    <span class="agency-fee">₹10,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📱 Social Media Management</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">SMM manager for feed updates & publishing</div>
+                    </div>
+                    <span class="agency-fee">₹8,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🌐 Website Development & Maintenance</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Web developer fees, hosting & maintenance</div>
+                    </div>
+                    <span class="agency-fee">₹12,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🚀 Landing Page Design & Funnels</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Landing page designer for individual project launches</div>
+                    </div>
+                    <span class="agency-fee">₹10,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>⚡ WhatsApp Automations</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Drip workflow setup + Wati/Interakt platform fee</div>
+                    </div>
+                    <span class="agency-fee">₹7,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🤖 WhatsApp Chatbot Setup</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Custom chatbot builder & development agency</div>
+                    </div>
+                    <span class="agency-fee">₹12,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📞 Manual Telecalling Desk</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Telecalling desk salaries + phone system + bonuses</div>
+                    </div>
+                    <span class="agency-fee">₹22,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🔄 Manual Sales Follow-ups</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Manual calling follow-ups & reminder desk overhead</div>
+                    </div>
+                    <span class="agency-fee">₹8,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🔔 Notifications & Alerts Setup</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Zapier / Webhook integration tools & SMS gateways</div>
+                    </div>
+                    <span class="agency-fee">₹3,500 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📅 Appointment Booking Software</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Calendly / Acuity team scheduling subscriptions</div>
+                    </div>
+                    <span class="agency-fee">₹2,500 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>👥 Team Management & User Seats</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Per-seat licenses for 5 team users across tools</div>
+                    </div>
+                    <span class="agency-fee">₹5,000 / mo</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📱 Custom Mobile App Development</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Dedicated mobile portal maintenance & developer</div>
+                    </div>
+                    <span class="agency-fee">₹9,000 / mo</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="grand-total-banner grand-total-agency">
+                  <div>
+                    <div style="font-size: 11px; font-weight: 600; color: #991b1b; text-transform: uppercase;">Total Disjointed Monthly Spend</div>
+                    <div style="font-size: 26px; font-weight: 800; color: var(--color-error); font-family: 'Plus Jakarta Sans', sans-serif;">₹1,60,500 <span style="font-size: 13px; font-weight: 500;">/ mo</span></div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div style="font-size: 11px; color: #7f1d1d;">Annual Cumulative Expense:</div>
+                    <div style="font-size: 16px; font-weight: 700; color: var(--color-error); font-family: 'Geist Mono';">₹19,26,000 / yr</div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; font-size: 11px; color: #991b1b; text-align: center;">
+                  ⚠️ Plus endless coordination headaches, human delays, sick leaves, and missed weekend leads.
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Nobogent AI System (17 Items Included) -->
+            <div class="cost-stack-card nobo-side">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                  <div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: var(--color-ink);">Nobogent AI Real Estate Department</h3>
+                    <div style="font-size: 12px; color: #0070f3; font-weight: 600;">All 17 Features In One Single System</div>
+                  </div>
+                  <span style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; font-family: 'Geist Mono';">ALL 17 INCLUDED</span>
+                </div>
+                <p style="font-size: 12px; color: var(--color-mute); margin-bottom: var(--spacing-md);">
+                  Every capability your real estate sales & marketing department needs, unified into an autonomous AI engine:
+                </p>
+
+                <ul class="role-list">
+                  <li class="role-item">
+                    <div>
+                      <strong>🎬 AI Video Creation</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">10 HD cinematic walkthrough videos generated each month</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🖼️ AI Image Creation</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">50 tailored property marketing creatives & ad banners/mo</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>✍️ Engaging AI Video Captions</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Auto-generated viral subtitles, hooks & property descriptions</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📊 Advanced AI CRM</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Pipeline board, call audio playback, sentiment & transcripts</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📢 AI Meta Ads Management</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">1-click Facebook & Instagram ad campaign launcher</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🎯 Retargeting Ads Management</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Server-side CAPI telemetry & custom audience auto-sync</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📱 Social Media Management</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">1-click multi-channel publishing & listing post scheduler</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🌐 AI Website Creator</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Complete project portfolio & developer showcase with CDN</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🚀 AI Landing Page Creator</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Ultra-fast 99+ PageSpeed high-converting project funnels</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>⚡ WhatsApp Automations</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Instant brochure dispatch, site visit reminders & drip triggers</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🤖 AI WhatsApp Chatbot</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">24/7 concierge trained on floorplans, carpet areas & pricing</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📞 AI Calling</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);"><30s autonomous voice calling agent with natural Indian tone</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🔄 Auto AI Followups</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Omnichannel multi-touch cadence across Voice, WhatsApp & SMS</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>🔔 Notifications & Alerts</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Real-time WhatsApp & sound pings when hot buyers qualify</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📅 Appointment Booking App</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Automated site-visit calendar slot booking & agent assignment</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>👥 Team Management</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">5 full team seats with role permissions & performance tracking</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                  <li class="role-item">
+                    <div>
+                      <strong>📱 Mobile App</strong>
+                      <div style="font-size: 11px; color: var(--color-mute);">Dedicated mobile broker app to manage leads on the go</div>
+                    </div>
+                    <span class="nobo-fee">✓ Included</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="grand-total-banner grand-total-nobo">
+                  <div>
+                    <div style="font-size: 11px; font-weight: 600; color: #1e40af; text-transform: uppercase;">Nobogent Monthly Subscription</div>
+                    <div style="font-size: 28px; font-weight: 800; color: #0070f3; font-family: 'Plus Jakarta Sans', sans-serif;">₹9,999 <span style="font-size: 13px; font-weight: 500;">/ month</span></div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div style="font-size: 11px; color: #047857; font-weight: 600;">Net Monthly Savings:</div>
+                    <div style="font-size: 20px; font-weight: 800; color: #10b981; font-family: 'Geist Mono';">₹1,50,501 / mo</div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; color: #047857; text-align: center; font-weight: 600;">
+                  ✨ Save over ₹18 Lakhs annually. Includes all 17 features with 30-day money-back guarantee.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Savings & ROI Calculator -->
+      <section id="calculator" style="padding: var(--spacing-5xl) 0;">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-cyan-deep); background-color: var(--color-cyan-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(41,188,155,0.15);">INTERACTIVE COST CALCULATOR</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">How Much Will Your Business Save?</h2>
+          <p style="color: var(--color-body); max-width: 600px; margin: 0 auto var(--spacing-3xl);">
+            Adjust the sliders below to see your personalized monthly and annual agency cost savings.
+          </p>
+
+          <div class="calc-card text-left">
+            <div class="calc-grid">
+              <!-- Controls -->
+              <div>
+                <div style="margin-bottom: var(--spacing-xl);">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <label style="font-size: 14px; font-weight: 600; color: var(--color-ink);">Estimated Current Agency & Team Spend (₹/mo):</label>
+                    <span id="agencySpendDisplay" style="font-family: 'Geist Mono'; font-size: 18px; font-weight: 700; color: var(--color-ink);">₹1,60,000</span>
+                  </div>
+                  <input type="range" id="agencySpendSlider" class="slider-control" min="40000" max="350000" step="5000" value="160000" />
+                  <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-mute); margin-top: 4px;">
+                    <span>₹40,000 (Freelancer Pair)</span>
+                    <span>₹1,60,000 (17-Tool Disjointed Stack)</span>
+                    <span>₹3,50,000+ (Full In-House Marketing Team)</span>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: var(--spacing-xl);">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <label style="font-size: 14px; font-weight: 600; color: var(--color-ink);">Average Monthly Inbound Leads:</label>
+                    <span id="leadsDisplay" style="font-family: 'Geist Mono'; font-size: 18px; font-weight: 700; color: #0070f3;">350 Leads</span>
+                  </div>
+                  <input type="range" id="leadsSlider" class="slider-control" min="50" max="2000" step="25" value="350" />
+                  <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-mute); margin-top: 4px;">
+                    <span>50 Leads</span>
+                    <span>500 Leads</span>
+                    <span>2,000+ Leads</span>
+                  </div>
+                </div>
+
+                <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); border: 1px solid var(--color-hairline);">
+                  <div style="font-size: 12px; font-weight: 600; color: var(--color-ink); margin-bottom: 6px;">⚡ Operational Speed Comparison:</div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--color-body); margin-bottom: 4px;">
+                    <span>Human Calling Response Time:</span>
+                    <strong style="color: var(--color-error);">2 to 6 Hours</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--color-body);">
+                    <span>Nobogent AI Voice Response Time:</span>
+                    <strong style="color: #10b981;">Under 30 Seconds</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Output Display -->
+              <div class="calc-result-box">
+                <div style="font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: #a1a1aa; font-family: 'Geist Mono';">YOUR ESTIMATED SAVINGS</div>
+                
+                <div style="margin: 16px 0;">
+                  <div style="font-size: 13px; color: #e4e4e7;">Net Monthly Savings</div>
+                  <div id="monthlySavingsVal" style="font-size: 42px; font-weight: 800; font-family: 'Plus Jakarta Sans', sans-serif; color: #34d399; line-height: 1.1;">₹1,50,001</div>
+                </div>
+
+                <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; margin-top: 14px;">
+                  <div style="font-size: 12px; color: #a1a1aa;">Projected Annual Bankable Savings</div>
+                  <div id="annualSavingsVal" style="font-size: 26px; font-weight: 700; color: #ffffff; font-family: 'Geist Mono';">₹18,20,001 / yr</div>
+                </div>
+
+                <div style="margin-top: 16px; font-size: 12px; color: #93c5fd; background: rgba(59, 130, 246, 0.15); padding: 8px 12px; border-radius: 6px;">
+                  🚀 Plus ~<strong><span id="hoursSavedVal">175</span> hours</strong> saved in manual calling & follow-ups each month!
+                </div>
+
+                <a href="#plans" class="btn btn-primary" style="width: 100%; margin-top: 20px; background-color: #0070f3; color: #fff; font-weight: 600;">
+                  Claim These Savings &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comprehensive Feature-by-Feature Comparison Table (17 Items) -->
+      <section id="full-table" style="padding: var(--spacing-5xl) 0; background-color: var(--color-canvas-soft); border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline);">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-violet-deep); background-color: var(--color-violet-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(121,40,202,0.15);">DETAILED SPECIFICATIONS</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">Complete 17-Feature Capability Audit</h2>
+          <p style="color: var(--color-body); max-width: 700px; margin: 0 auto;">
+            Compare every single tool and capability included with Nobogent vs paying fragmented agencies in India.
+          </p>
+
+          <!-- Interactive Filter Tabs -->
+          <div class="filter-tabs-wrapper">
+            <button class="filter-tab active" data-category="all">All 17 Features</button>
+            <button class="filter-tab" data-category="creative">Creative & Content (5)</button>
+            <button class="filter-tab" data-category="voice">AI Voice & Calling (2)</button>
+            <button class="filter-tab" data-category="whatsapp">WhatsApp & Bot (3)</button>
+            <button class="filter-tab" data-category="ads">Ads & Lead Gen (3)</button>
+            <button class="filter-tab" data-category="crm">CRM & Operations (4)</button>
+          </div>
+
+          <!-- The Table -->
+          <div class="table-responsive">
+            <div class="table-container">
+              <table class="comp-table">
+                <thead>
+                  <tr>
+                    <th class="feature-col">Feature / App Capability</th>
+                    <th class="agency-col">Traditional Indian Agency Stack</th>
+                    <th class="nobogent-col">Nobogent AI System</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <!-- 1. AI Video Creation -->
+                  <tr data-category="creative">
+                    <td>
+                      <div class="feature-title"><span>🎬</span> AI Video Creation</div>
+                      <div class="feature-sub">Generate cinematic project walkthroughs, drone-style edits & vertical Reels.</div>
+                      <span class="category-pill">Creative & Content</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹14,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Freelance Video Editor</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>₹2,500 – ₹5,000 per video reel</li>
+                        <li>4 to 7 business days per draft</li>
+                        <li>Limited revision allowances</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">10 HD Walkthrough Videos / mo</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Generated in minutes from project assets</li>
+                        <li>High conversion vertical & 16:9 formats</li>
+                        <li>Branded with your developer logo & watermarks</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 2. AI Image Creation -->
+                  <tr data-category="creative">
+                    <td>
+                      <div class="feature-title"><span>🖼️</span> AI Image Creation</div>
+                      <div class="feature-sub">High-converting property banners, floor plan highlights & festive creatives.</div>
+                      <span class="category-pill">Creative & Content</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹9,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Graphic Design Agency</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Capped at 15–20 creatives per month</li>
+                        <li>Delayed turnarounds for price drops or new launches</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">50 Tailored Property Creatives / mo</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Instant banner variations across all dimensions</li>
+                        <li>Engineered specifically for Meta & Google Ad click-rates</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 3. Engaging AI Video Captions -->
+                  <tr data-category="creative">
+                    <td>
+                      <div class="feature-title"><span>✍️</span> Engaging AI Video Captions</div>
+                      <div class="feature-sub">Animated subtitles, viral real estate hooks & persuasive property copy.</div>
+                      <span class="category-pill">Creative & Content</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹5,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Social Media Copywriter</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Manual subtitle syncing in Premiere/CapCut</li>
+                        <li>Generic copy without conversion intent</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Automated Viral Subtitles & Hooks</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Word-by-word animated highlighted captions</li>
+                        <li>Tailored for Indian buyers (budget, amenities, location)</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 4. Advanced AI CRM -->
+                  <tr data-category="crm">
+                    <td>
+                      <div class="feature-title"><span>📊</span> Advanced AI CRM</div>
+                      <div class="feature-sub">Custom real estate deal stages, buyer sentiment tags & automated recording analysis.</div>
+                      <span class="category-pill">CRM & Operations</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹7,500 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">LeadSquared / Sell.do / Salesforce</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Expensive annual upfront contracts</li>
+                        <li>No native audio transcription or AI sentiment analysis</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Purpose-Built Real Estate Operating System</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Full call audio recordings, transcripts & intent rating</li>
+                        <li>Visual drag-and-drop pipeline synchronized with ads</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 5. AI Meta Ads Management -->
+                  <tr data-category="ads">
+                    <td>
+                      <div class="feature-title"><span>📢</span> AI Meta Ads Management</div>
+                      <div class="feature-sub">Autonomous Facebook & Instagram ad campaign optimization and launching.</div>
+                      <span class="category-pill">Ads & Lead Gen</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹16,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Performance Agency Retainer</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Fixed retainer + 10-15% cut on ad spend</li>
+                        <li>Days of delay to update creatives or budgets</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">1-Click Ad Launch Engine</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Deploy tested real estate campaigns in under 3 minutes</li>
+                        <li>Zero percentage fee on your media spend</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 6. Retargeting Ads Management -->
+                  <tr data-category="ads">
+                    <td>
+                      <div class="feature-title"><span>🎯</span> Retargeting Ads Management & CAPI</div>
+                      <div class="feature-sub">Server-side Conversions API (CAPI) and dynamic custom audience retargeting.</div>
+                      <span class="category-pill">Ads & Lead Gen</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹10,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Technical DevOps & Ad Consultant</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Standard pixels lose 40% of leads to Safari / ad-blockers</li>
+                        <li>Costly cloud server hosting setup for CAPI</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Zero-Leak Server CAPI Architecture</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Dedicated server node passes 100% verified conversions</li>
+                        <li>Auto-retargets prospects who downloaded brochures</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 7. Social Media Management -->
+                  <tr data-category="ads">
+                    <td>
+                      <div class="feature-title"><span>📱</span> Social Media Management</div>
+                      <div class="feature-sub">1-Click multi-platform posting, scheduling & property inventory showcases.</div>
+                      <span class="category-pill">Ads & Lead Gen</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹8,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Social Media Agency</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Manual posting across Facebook, Instagram, LinkedIn</li>
+                        <li>Slow coordination for new unit availability</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Unified Distribution Dashboard</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Broadcast property listings across all handles in 1 click</li>
+                        <li>Automated scheduling calendar with pre-written copy</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 8. AI Website Creator -->
+                  <tr data-category="creative">
+                    <td>
+                      <div class="feature-title"><span>🌐</span> AI Website Creator</div>
+                      <div class="feature-sub">Full developer & brokerage web portal showcasing all residential/commercial projects.</div>
+                      <span class="category-pill">Creative & Content</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹12,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Web Development Firm</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>₹30,000 – ₹50,000 upfront + hosting/SSL maintenance</li>
+                        <li>Clunky WordPress plugins that break regularly</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Modern High-Speed Real Estate Portal</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Instant deployment with global CDN and SSL included</li>
+                        <li>Integrated WhatsApp chat widget & lead forms</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 9. AI Landing Page Creator -->
+                  <tr data-category="creative">
+                    <td>
+                      <div class="feature-title"><span>🚀</span> AI Landing Page Creator</div>
+                      <div class="feature-sub">Project-specific high-converting landing pages with brochure gate forms.</div>
+                      <span class="category-pill">Creative & Content</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹10,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Landing Page Specialist</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>₹10k–₹15k billed per new project launch</li>
+                        <li>Sub-par mobile optimization causing ad bounce</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">99+ PageSpeed Mobile Funnels</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Pre-optimized for high conversion and low cost-per-lead</li>
+                        <li>Instant brochure download gated with OTP/WhatsApp sync</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 10. WhatsApp Automations -->
+                  <tr data-category="whatsapp">
+                    <td>
+                      <div class="feature-title"><span>⚡</span> WhatsApp Automations</div>
+                      <div class="feature-sub">Triggered workflows, site-visit reminders, and segmented broadcast campaigns.</div>
+                      <span class="category-pill">WhatsApp & Bot</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹7,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Wati / Interakt + Agency Setup</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Separate SaaS subscription + agency hourly billing</li>
+                        <li>Complex webhook setup with external CRMs</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Autonomous WhatsApp Workflows</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Trigger-based confirmations with Google Maps pin</li>
+                        <li>Automated check-ins for missed site visits</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 11. AI WhatsApp Chatbot -->
+                  <tr data-category="whatsapp">
+                    <td>
+                      <div class="feature-title"><span>🤖</span> AI WhatsApp Chatbot</div>
+                      <div class="feature-sub">24/7 intelligent concierge trained on project floor plans, unit prices & amenities.</div>
+                      <span class="category-pill">WhatsApp & Bot</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹12,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Chatbot Dev Agency</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Rigid button-only trees that frustrate buyers</li>
+                        <li>Cannot answer custom questions on carpet area/EMI</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">LLM-Powered Real Estate Concierge</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Conversational AI handles natural Hindi & English inquiries</li>
+                        <li>Dispatches PDF brochures & floorplans on demand 24/7</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 12. AI Calling -->
+                  <tr data-category="voice">
+                    <td>
+                      <div class="feature-title"><span>📞</span> AI Calling</div>
+                      <div class="feature-sub">Autonomous voice agent dialing new leads in under 30 seconds to qualify intent.</div>
+                      <span class="category-pill">AI Voice & Calling</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹22,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Human Telecaller Desk</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>2 to 12 hour delay; leads turn cold and forget submitting</li>
+                        <li>Constant employee attrition, sick leaves & mood swings</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Sub-30s Instant Autonomous Dialing</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Dials in 30 seconds when prospect interest is peak</li>
+                        <li>Polite, articulate Indian English / conversational Hindi tone</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 13. Auto AI Followups -->
+                  <tr data-category="whatsapp">
+                    <td>
+                      <div class="feature-title"><span>🔄</span> Auto AI Followups</div>
+                      <div class="feature-sub">Omnichannel persistent cadence across Voice, WhatsApp, SMS & Email.</div>
+                      <span class="category-pill">WhatsApp & Bot</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹8,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Sales Rep Follow-up Time</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>80% of reps drop leads after just 1 or 2 unanswered dials</li>
+                        <li>Dead pipeline accumulation with zero revival campaigns</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Smart Adaptive Follow-up Engine</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Multi-day touchpoint cadence adapting to buyer responses</li>
+                        <li>Revives cold databases with festive offers & price changes</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 14. Notifications & Alerts -->
+                  <tr data-category="crm">
+                    <td>
+                      <div class="feature-title"><span>🔔</span> Notifications & Alerts</div>
+                      <div class="feature-sub">Instant real-time WhatsApp & sound pings when high-budget buyers qualify.</div>
+                      <span class="category-pill">CRM & Operations</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹3,500 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Third-Party Integration Apps</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Zapier / Make.com monthly task costs</li>
+                        <li>Delays in alerting sales agents about VIP prospects</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Instant VIP Buyer Escalations</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Pings your phone the instant a site visit is confirmed</li>
+                        <li>Provides call recording snippet & qualification score</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 15. Appointment Booking App -->
+                  <tr data-category="crm">
+                    <td>
+                      <div class="feature-title"><span>📅</span> Appointment Booking App</div>
+                      <div class="feature-sub">Automated site-visit calendar scheduling with round-robin sales executive routing.</div>
+                      <span class="category-pill">CRM & Operations</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹2,500 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Calendly / Acuity Subscriptions</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Billed per user seat each month</li>
+                        <li>No direct integration with voice calling AI</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">Native Calendar & Visit Engine</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Voice AI & WhatsApp bot book directly into calendar</li>
+                        <li>Assigns site visit to available on-duty sales managers</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 16. Team Management -->
+                  <tr data-category="crm">
+                    <td>
+                      <div class="feature-title"><span>👥</span> Team Management</div>
+                      <div class="feature-sub">5 full team accounts with granular role permissions & closure tracking.</div>
+                      <span class="category-pill">CRM & Operations</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹5,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Per-Seat Licensing Tolls</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>Extra ₹1,000–₹1,500 billed per team seat per month</li>
+                        <li>Reps share logins causing lost lead accountability</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">5 Full Team Accounts Included</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Assign specific leads to specific sales executives</li>
+                        <li>Track team site visit completion & conversion KPIs</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- 17. Mobile App -->
+                  <tr data-category="crm">
+                    <td>
+                      <div class="feature-title"><span>📱</span> Mobile App</div>
+                      <div class="feature-sub">Dedicated broker & agent mobile suite for iOS & Android to manage leads in the field.</div>
+                      <span class="category-pill">CRM & Operations</span>
+                    </td>
+                    <td class="agency-col">
+                      <div class="cost-tag-agency">₹9,000 / mo</div>
+                      <p style="margin-bottom: 4px; font-weight: 500;">Mobile Dev & Server Retainer</p>
+                      <ul style="font-size: 12px; color: var(--color-mute); padding-left: 16px; margin: 0;">
+                        <li>High upfront development + app store maintenance</li>
+                        <li>Field agents forced to use slow desktop web portals</li>
+                      </ul>
+                    </td>
+                    <td class="nobogent-col">
+                      <div class="cost-tag-nobo">✅ Included in Package</div>
+                      <p style="margin-bottom: 4px; font-weight: 600; color: #0070f3;">On-The-Go Field Broker Suite</p>
+                      <ul style="font-size: 12px; color: var(--color-body); padding-left: 16px; margin: 0;">
+                        <li>Instant push alerts, call recording playback & one-tap WhatsApp</li>
+                        <li>Manage your entire pipeline right from the site office</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <!-- Grand Total Row -->
+                  <tr data-category="all" style="background-color: #f8fafc; font-weight: 600;">
+                    <td>
+                      <div style="font-size: 15px; font-weight: 700; color: var(--color-ink);">
+                        💰 Total Estimated Monthly Cost (17 Items)
+                      </div>
+                      <div style="font-size: 12px; color: var(--color-mute);">
+                        Comprehensive all-inclusive operational expenditure in India.
+                      </div>
+                    </td>
+                    <td class="agency-col">
+                      <div style="font-size: 20px; font-weight: 800; color: var(--color-error); font-family: 'Plus Jakarta Sans';">
+                        ₹1,60,500 / mo
+                      </div>
+                      <div style="font-size: 12px; font-weight: 500; color: #b91c1c;">
+                        (₹19.26 Lakhs per year across 17 vendors)
+                      </div>
+                    </td>
+                    <td class="nobogent-col">
+                      <div style="font-size: 22px; font-weight: 800; color: #0070f3; font-family: 'Plus Jakarta Sans';">
+                        ₹9,999 / mo <span style="font-size: 13px; font-weight: normal; color: var(--color-body);">+ GST</span>
+                      </div>
+                      <div style="font-size: 12px; font-weight: 600; color: #047857;">
+                        (Annual plan: ₹99,999/yr • Save over ₹18 Lakhs/yr)
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transparent Nobogent Pricing Plans (INR) -->
+      <section id="plans" style="padding: var(--spacing-5xl) 0;">
+        <div class="container" style="text-align: center;">
+          <span class="mono-label" style="color: var(--color-link); background-color: var(--color-link-bg-soft); padding: 4px 10px; border-radius: var(--rounded-pill-sm); border: 1px solid rgba(0,112,243,0.15);">NO HIDDEN FEES • 100% TRANSPARENT PRICING</span>
+          <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">Choose Your Nobogent AI Growth Plan</h2>
+          <p style="color: var(--color-body); max-width: 650px; margin: 0 auto;">
+            All packages include our complete AI sales department, 5 team seats, CRM, WhatsApp Bot, and 30-day money-back guarantee.
+          </p>
+
+          <div class="pricing-grid">
+            <!-- Plan 1: 1 Month -->
+            <div class="plan-card">
+              <div>
+                <span class="category-pill" style="margin-bottom: 8px;">Monthly Flexibility</span>
+                <h3 style="font-size: 22px; font-weight: 700; color: var(--color-ink);">1 Month Plan</h3>
+                <p style="font-size: 13px; color: var(--color-mute); margin-top: 4px;">Ideal for testing the system on an upcoming project launch.</p>
+                <div class="plan-price-num">
+                  ₹9,999 <span style="font-size: 14px; font-weight: 500; color: var(--color-mute);">+ GST / mo</span>
+                </div>
+              </div>
+
+              <div>
+                <ul class="plan-feature-list">
+                  <li><span class="check-icon">✓</span> <strong>1,500 AI Monthly Credits</strong> (10 Videos + 50 Marketing Creatives)</li>
+                  <li><span class="check-icon">✓</span> <strong>Under 30-Sec AI Voice Calling</strong> (Recharge calling minutes as needed)</li>
+                  <li><span class="check-icon">✓</span> <strong>24/7 WhatsApp AI Concierge Bot</strong> with brochure dispatch</li>
+                  <li><span class="check-icon">✓</span> <strong>Built-in Real Estate CRM</strong> with pipeline boards & transcripts</li>
+                  <li><span class="check-icon">✓</span> <strong>1-Click Ads & Social Media Engine</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>Landing Page & Website Builder</strong> (Ultra-fast CDN)</li>
+                  <li><span class="check-icon">✓</span> <strong>5 Team User Accounts</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>30-Day Money Back Guarantee</strong></li>
+                </ul>
+
+                <a href="https://nobogent.com" class="btn btn-secondary" style="width: 100%; font-weight: 600; padding: 12px 0;">
+                  Start 1 Month Plan
+                </a>
+              </div>
+            </div>
+
+            <!-- Plan 2: 6 Months -->
+            <div class="plan-card">
+              <div>
+                <span class="category-pill" style="margin-bottom: 8px;">Semi-Annual Momentum</span>
+                <h3 style="font-size: 22px; font-weight: 700; color: var(--color-ink);">6 Months Plan</h3>
+                <p style="font-size: 13px; color: var(--color-mute); margin-top: 4px;">Designed for continuous inventory sales & broker teams.</p>
+                <div class="plan-price-num">
+                  ₹54,999 <span style="font-size: 14px; font-weight: 500; color: var(--color-mute);">+ GST</span>
+                </div>
+                <div style="font-size: 12px; color: var(--color-mute); font-family: 'Geist Mono';">Effective ₹9,166 / month</div>
+              </div>
+
+              <div>
+                <ul class="plan-feature-list">
+                  <li><span class="check-icon">✓</span> <strong>1,500 AI Credits each month</strong> (60 Videos + 300 Creatives total)</li>
+                  <li><span class="check-icon">✓</span> <strong>Under 30-Sec AI Voice Calling</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>WhatsApp Automation Bot</strong> & persistent drips</li>
+                  <li><span class="check-icon">✓</span> <strong>Server CAPI Lead Gen Tracking</strong> setup</li>
+                  <li><span class="check-icon">✓</span> <strong>Built-in Real Estate CRM</strong> with recording archives</li>
+                  <li><span class="check-icon">✓</span> <strong>Landing Pages & Website Creation</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>5 Team User Accounts</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>Priority VIP Setup & Dedicated Specialist</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>30-Day Money Back Guarantee</strong></li>
+                </ul>
+
+                <a href="https://nobogent.com" class="btn btn-secondary" style="width: 100%; font-weight: 600; padding: 12px 0;">
+                  Start 6 Month Plan
+                </a>
+              </div>
+            </div>
+
+            <!-- Plan 3: 12 Months (Best Value) -->
+            <div class="plan-card popular">
+              <div class="popular-ribbon">SAVE ₹20,000 • BEST VALUE</div>
+              <div>
+                <span class="category-pill" style="margin-bottom: 8px; background: #e0f2fe; color: #0284c7;">Annual Operating System</span>
+                <h3 style="font-size: 22px; font-weight: 700; color: var(--color-ink);">12 Months Plan</h3>
+                <p style="font-size: 13px; color: var(--color-mute); margin-top: 4px;">Complete year-round sales & marketing department autonomy.</p>
+                <div class="plan-price-num" style="color: #0070f3;">
+                  ₹99,999 <span style="font-size: 14px; font-weight: 500; color: var(--color-mute);">+ GST / yr</span>
+                </div>
+                <div style="font-size: 12px; color: #10b981; font-weight: 600; font-family: 'Geist Mono';">Effective only ₹8,333 / month</div>
+              </div>
+
+              <div>
+                <ul class="plan-feature-list">
+                  <li><span class="check-icon">✓</span> <strong style="color: #047857;">Instant ₹20,000 Annual Savings</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>1,500 AI Credits refreshed every month</strong> (120 Videos + 600 Creatives)</li>
+                  <li><span class="check-icon">✓</span> <strong>Full AI Calling Suite</strong> with custom script training</li>
+                  <li><span class="check-icon">✓</span> <strong>24/7 WhatsApp Conversational Bot</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>Server-Side Meta CAPI Infrastructure</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>Built-in CRM & Omnichannel Drips</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>Unlimited Landing Pages & Listings</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>5 Team User Accounts</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>1-on-1 Implementation Engineer & Setup</strong></li>
+                  <li><span class="check-icon">✓</span> <strong>30-Day Unconditional Money Back Guarantee</strong></li>
+                </ul>
+
+                <a href="https://nobogent.com" class="btn btn-primary" style="width: 100%; font-weight: 600; padding: 14px 0; background: #0070f3; color: white;">
+                  Deploy 1-Year System &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The No-Brainer 1-Deal Real Estate ROI Math -->
+      <section id="roi" style="padding: var(--spacing-5xl) 0; background: var(--color-canvas-soft); border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline);">
+        <div class="container" style="max-width: 950px; text-align: center;">
+          <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #ecfdf5; border: 1px solid rgba(16,185,129,0.2); border-radius: var(--rounded-pill); margin-bottom: var(--spacing-md);" class="mono-label">
+            <span style="color: #059669; font-weight: 700;">🏠 THE 1-DEAL ROI ADVANTAGE</span>
+          </div>
+
+          <h2 class="display-lg" style="margin-bottom: var(--spacing-md);">Close Just ONE Extra Deal To Pay For The Entire Year</h2>
+          <p style="font-size: 16px; color: var(--color-body); margin-bottom: var(--spacing-3xl); line-height: 1.6;">
+            In Indian real estate, a single property transaction yields an average brokerage commission or developer margin between <strong>₹1.5 Lakhs and ₹5.0+ Lakhs</strong>.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); margin-bottom: var(--spacing-2xl); text-align: center;">
+            <div style="background: #ffffff; border: 1px solid var(--color-hairline); border-radius: var(--rounded-lg); padding: var(--spacing-xl);">
+              <div style="font-size: 32px; margin-bottom: 8px;">🤝</div>
+              <div style="font-size: 13px; font-weight: 600; color: var(--color-mute); text-transform: uppercase;">Average Deal Commission</div>
+              <div style="font-size: 28px; font-weight: 800; color: var(--color-ink); margin: 6px 0; font-family: 'Plus Jakarta Sans';">₹1.5L – ₹5.0L+</div>
+              <p style="font-size: 12px; color: var(--color-mute);">From just 1 successful residential or commercial closing.</p>
+            </div>
+
+            <div style="background: #ffffff; border: 2px solid #0070f3; border-radius: var(--rounded-lg); padding: var(--spacing-xl); box-shadow: 0 10px 30px rgba(0, 112, 243, 0.08);">
+              <div style="font-size: 32px; margin-bottom: 8px;">💳</div>
+              <div style="font-size: 13px; font-weight: 600; color: #0070f3; text-transform: uppercase;">Nobogent 1-Year System</div>
+              <div style="font-size: 28px; font-weight: 800; color: #0070f3; margin: 6px 0; font-family: 'Plus Jakarta Sans';">₹99,999</div>
+              <p style="font-size: 12px; color: var(--color-body);">365 days of 24/7 AI calling, WhatsApp bots, CRM & ads.</p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid var(--color-hairline); border-radius: var(--rounded-lg); padding: var(--spacing-xl);">
+              <div style="font-size: 32px; margin-bottom: 8px;">📈</div>
+              <div style="font-size: 13px; font-weight: 600; color: #047857; text-transform: uppercase;">Immediate Net ROI</div>
+              <div style="font-size: 28px; font-weight: 800; color: #10b981; margin: 6px 0; font-family: 'Plus Jakarta Sans';">150% – 400%+</div>
+              <p style="font-size: 12px; color: var(--color-mute);">Every subsequent deal closed is 100% net profit.</p>
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--color-hairline); border-radius: var(--rounded-xl); padding: var(--spacing-2xl); text-align: left; box-shadow: 0 8px 24px rgba(0,0,0,0.03);">
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--color-ink); margin-bottom: 8px;">💡 The Mathematical Real Estate Reality</h4>
+            <p style="font-size: 14px; color: var(--color-body); line-height: 1.6; margin: 0;">
+              By dialing every lead in <strong>under 30 seconds</strong> instead of 4 hours, realtors typically see site-visit booking rates increase by <strong>35% to 50%</strong>. Out of 500 leads handled by Nobogent over 12 months, if our automated calling and WhatsApp nurturing converts <strong>even just ONE extra buyer who would have slipped away</strong>, your entire subscription cost is returned with substantial profit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 30-Day Money Back Guarantee Banner -->
+      <section style="padding: var(--spacing-4xl) 0;">
+        <div class="container" style="max-width: 900px;">
+          <div style="background: #ffffff; border: 1px solid var(--color-hairline); border-radius: var(--rounded-xl); padding: var(--spacing-2xl); display: flex; align-items: center; gap: var(--spacing-xl); box-shadow: 0 12px 36px rgba(0,0,0,0.03);" class="guarantee-box">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background: #ecfdf5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 36px;">
+              🛡️
+            </div>
+            <div>
+              <h3 style="font-size: 19px; font-weight: 700; color: var(--color-ink); margin-bottom: 6px;">
+                100% Risk-Free 30-Day Money-Back Guarantee
+              </h3>
+              <p style="font-size: 14px; color: var(--color-body); line-height: 1.6; margin: 0;">
+                Try Nobogent on your active real estate projects for a full 30 days. If you don't experience faster lead qualification, higher site-visit bookings, and massive time savings compared to your previous agency or telecallers, simply request a refund. We will return your subscription fee in full — no questions asked.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" style="padding: var(--spacing-5xl) 0; background: var(--color-canvas-soft); border-top: 1px solid var(--color-hairline); border-bottom: 1px solid var(--color-hairline);">
+        <div class="container" style="max-width: 850px;">
+          <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <span class="mono-label" style="color: var(--color-ink); background: rgba(0,0,0,0.06); padding: 4px 10px; border-radius: var(--rounded-pill-sm);">ANSWERS TO COMMON QUESTIONS</span>
+            <h2 class="display-lg" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">Frequently Asked Questions</h2>
+            <p style="color: var(--color-body);">Everything you need to know about switching from an agency to Nobogent AI.</p>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item open">
+              <div class="faq-header">
+                <span class="faq-title">Why is Nobogent so much more affordable than an Indian marketing agency?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-body">
+                Traditional agencies in India charge high monthly retainers (₹50k - ₹1L+) because they have heavy manual payroll: account managers, copywriters, graphic designers, telecalling desks, and web devs. Nobogent eliminates this overhead by orchestrating proprietary autonomous AI agents for voice calls, WhatsApp chat, creative generation, and CAPI telemetry. We pass these architectural cost savings directly to you.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-header">
+                <span class="faq-title">Does the AI voice agent speak with an Indian accent and understand Hindi?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-body">
+                Yes! Our voice agents are customized for the Indian real estate market. They speak in natural, articulate Indian English and conversational Hindi/Hinglish with ultra-low latency (&lt;800ms conversational turn-taking). They understand common Indian property vernacular (such as 2BHK, 3BHK + Servant, Carpet Area, RERA registered, Possession date, Registry, All-inclusive pricing).
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-header">
+                <span class="faq-title">Do I need to fire my current human sales team?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-body">
+                No. Nobogent acts as their force multiplier. Human sales agents waste 70% of their day cold-calling uninterested numbers, dealing with switch-offs, or answering basic brochure questions. Nobogent handles the initial 30-second qualification and brochure dispatch. Only hot, verified buyers with confirmed budgets and scheduled site visits are handed over to your human closers.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-header">
+                <span class="faq-title">How does Nobogent handle Meta and Google Ad spend?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-body">
+                Your ad spend is paid directly to Meta or Google from your own corporate cards or billing accounts. Nobogent provides the 1-click campaign launcher, AI creative assets, high-converting landing pages, and server-side Conversions API (CAPI) infrastructure to optimize your return on ad spend (ROAS). Unlike agencies, we never charge a percentage markup on your ad spend.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-header">
+                <span class="faq-title">How fast can we go live after subscribing?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-body">
+                Unlike agencies that require 3 to 6 weeks of onboarding meetings, your Nobogent workspace is provisioned within 24 to 48 hours. Our implementation engineering team coordinates your WhatsApp business profile verification, embeds your project brochures, and connects your Meta ad accounts so you can begin capturing qualified leads immediately.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-header">
+                <span class="faq-title">What happens if we need more than 1,500 monthly AI credits?</span>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-body">
+                1,500 credits easily supports 10 full HD video walkthroughs and 50 social/ad banners every month. If you are launching multiple major high-rise township projects or need high creative output, you can recharge credit bundles instantly inside the Nobogent app with 1 click at standard nominal rates.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Conversion CTA -->
+      <section style="padding: var(--spacing-5xl) 0; background-color: var(--color-primary); color: var(--color-on-primary); text-align: center;">
+        <div class="container" style="max-width: 700px;">
+          <div style="font-family: 'Geist Mono'; font-size: 11px; letter-spacing: 0.08em; color: #a1a1aa; text-transform: uppercase; margin-bottom: 12px;">
+            JOIN THE REAL ESTATE AI REVOLUTION
+          </div>
+          <h2 style="color: var(--color-on-primary); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--spacing-sm); letter-spacing: -0.03em;">
+            Stop Wasting ₹70k+/Month on Sluggish Agencies
+          </h2>
+          <p style="color: rgba(255,255,255,0.75); font-size: 16px; margin-bottom: var(--spacing-2xl); line-height: 1.6;">
+            Deploy your 24/7 AI Sales & Marketing Department today. Dials leads in 30 seconds, automates WhatsApp inquiries, and saves your real estate business over ₹7.8 Lakhs annually.
+          </p>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://nobogent.com" class="btn btn-secondary" style="font-size: 15px; font-weight: 700; padding: 14px 36px; background: #ffffff; color: #171717;">
+              Get Started with Nobogent &rarr;
+            </a>
+            <a href="https://nobogent.com" class="btn btn-outline" style="font-size: 15px; font-weight: 600; padding: 14px 32px; color: #ffffff; border-color: rgba(255,255,255,0.3);">
+              Schedule 1-on-1 Demo
+            </a>
+          </div>
+
+          <div style="margin-top: var(--spacing-xl); font-size: 12px; color: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <span>🛡️ 30-Day Money Back Guarantee</span>
+            <span>⚡ Setup within 24-48 hours</span>
+            <span>🇮🇳 Built for Indian Real Estate</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="padding: var(--spacing-4xl) 0 var(--spacing-2xl); background-color: var(--color-canvas); font-size: 12px; border-top: 1px solid var(--color-hairline);">
+      <div class="container" style="display: flex; flex-direction: column; gap: var(--spacing-xl);">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-lg);">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--spacing-xs);">
+              <Image src={logoTransparent} alt="Nobogent Logo" width={288} style="height: 96px; width: auto; object-fit: contain;" />
+            </div>
+            <p style="color: var(--color-mute); max-width: 280px; line-height: 1.6;">
+              World's First AI Sales & Marketing Department for Real Estate. Auto-dial leads in 30 seconds, deploy WhatsApp AI bots, and bypass ad blocks with CAPI.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 11px; font-weight: 600; color: var(--color-ink); margin-bottom: var(--spacing-sm); text-transform: uppercase;" class="mono-label">Navigation</h4>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; color: var(--color-mute);">
+              <li><a href="/">Home</a></li>
+              <li><a href="/pricing-india">Agency Price Comparison (India)</a></li>
+              <li><a href="/gtm-strategy">GTM & WhatsApp Funnel Economics</a></li>
+              <li><a href="/ppt">Presentation Deck</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 11px; font-weight: 600; color: var(--color-ink); margin-bottom: var(--spacing-sm); text-transform: uppercase;" class="mono-label">Legal</h4>
+            <p style="color: var(--color-mute); font-size: 11px; margin-bottom: 6px;">Powered by Nobogent AI Solutions LLP</p>
+            <div style="display: flex; gap: var(--spacing-md); color: var(--color-mute);">
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/terms-of-service">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+        <div style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; color: var(--color-mute);">
+          <p>© {new Date().getFullYear()} Nobogent AI Solutions LLP. All rights reserved.</p>
+          <p>Indian Rupee (INR) Pricing Estimates based on 2026 Tier-1 & Tier-2 Agency Benchmarks.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Scripts for Calculator, Table Filter, and FAQ Accordion -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. Interactive ROI / Savings Calculator ---
+        var agencySpendSlider = document.getElementById('agencySpendSlider');
+        var agencySpendDisplay = document.getElementById('agencySpendDisplay');
+        var leadsSlider = document.getElementById('leadsSlider');
+        var leadsDisplay = document.getElementById('leadsDisplay');
+        var monthlySavingsVal = document.getElementById('monthlySavingsVal');
+        var annualSavingsVal = document.getElementById('annualSavingsVal');
+        var hoursSavedVal = document.getElementById('hoursSavedVal');
+
+        var NOBOGENT_MONTHLY_COST = 9999;
+
+        function updateCalculator() {
+          var agencySpend = parseInt(agencySpendSlider.value, 10);
+          var leads = parseInt(leadsSlider.value, 10);
+
+          agencySpendDisplay.textContent = '₹' + agencySpend.toLocaleString('en-IN');
+          leadsDisplay.textContent = leads.toLocaleString('en-IN') + ' Leads';
+
+          var monthlySavings = Math.max(0, agencySpend - NOBOGENT_MONTHLY_COST);
+          var annualSavings = (agencySpend * 12) - (99999); // using 1-year annual plan
+          var hoursSaved = Math.round(leads * 0.5); // ~30 mins per lead saved in manual follow-ups
+
+          monthlySavingsVal.textContent = '₹' + monthlySavings.toLocaleString('en-IN');
+          annualSavingsVal.textContent = '₹' + annualSavings.toLocaleString('en-IN') + ' / yr';
+          hoursSavedVal.textContent = hoursSaved;
+        }
+
+        if (agencySpendSlider && leadsSlider) {
+          agencySpendSlider.addEventListener('input', updateCalculator);
+          leadsSlider.addEventListener('input', updateCalculator);
+          updateCalculator();
+        }
+
+        // --- 2. Interactive Feature Filter Tabs ---
+        var filterTabs = document.querySelectorAll('.filter-tab');
+        var tableRows = document.querySelectorAll('#tableBody tr[data-category]');
+
+        filterTabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            filterTabs.forEach(function(t) { t.classList.remove('active'); });
+            tab.classList.add('active');
+
+            var category = tab.getAttribute('data-category');
+
+            tableRows.forEach(function(row) {
+              if (category === 'all' || row.getAttribute('data-category') === category) {
+                row.style.display = '';
+              } else {
+                row.style.display = 'none';
+              }
+            });
+          });
+        });
+
+        // --- 3. FAQ Accordion ---
+        var faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(function(item) {
+          var header = item.querySelector('.faq-header');
+          if (header) {
+            header.addEventListener('click', function() {
+              var isOpen = item.classList.contains('open');
+              faqItems.forEach(function(i) { i.classList.remove('open'); });
+              if (!isOpen) {
+                item.classList.add('open');
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
