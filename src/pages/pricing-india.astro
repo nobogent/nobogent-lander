@@ -8,7 +8,7 @@ import logoTransparent from '../assets/logo-transparent.png';
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/logo-transparent.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     
     <title>Nobogent AI vs Traditional Agencies | Feature & Price Comparison (India)</title>
@@ -66,10 +66,21 @@ import logoTransparent from '../assets/logo-transparent.png';
 
     <style>
       /* Custom styles complementing global.css with Vercel aesthetic */
+      :global(html), :global(body) {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
       .pricing-hero {
         padding: var(--spacing-5xl) 0 var(--spacing-3xl);
         text-align: center;
         position: relative;
+      }
+
+      .pricing-hero h1 {
+        font-size: clamp(2rem, 4.5vw, 4.25rem);
+        letter-spacing: -0.04em;
+        line-height: 1.1;
       }
 
       .badge-pill {
@@ -87,6 +98,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         text-transform: uppercase;
         color: var(--color-ink);
         margin-bottom: var(--spacing-lg);
+        max-width: 100%;
       }
 
       .badge-pill .pulse-dot {
@@ -96,12 +108,109 @@ import logoTransparent from '../assets/logo-transparent.png';
         background-color: #10b981;
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
         animation: pulseGreen 2s infinite;
+        flex-shrink: 0;
       }
 
       @keyframes pulseGreen {
         0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
         70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
         100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+      }
+
+      /* Header & Mobile Drawer */
+      .header-logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .header-logo-img {
+        height: 48px;
+        width: auto;
+        max-width: 170px;
+        object-fit: contain;
+      }
+
+      .header-cta-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: transparent;
+        border: 1px solid var(--color-hairline);
+        border-radius: var(--rounded-md);
+        padding: 7px;
+        cursor: pointer;
+        color: var(--color-ink);
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s ease;
+      }
+
+      .mobile-menu-btn:hover {
+        background: var(--color-canvas-soft);
+        border-color: var(--color-hairline-strong);
+      }
+
+      .mobile-nav-drawer {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--color-hairline);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 16px 20px 24px;
+        z-index: 999;
+      }
+
+      .mobile-nav-drawer.open {
+        display: block;
+        animation: drawerSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes drawerSlide {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .mobile-nav-item {
+        display: block;
+        padding: 11px 14px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-ink);
+        border-radius: var(--rounded-md);
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+
+      .mobile-nav-item:hover, .mobile-nav-item:active {
+        background: var(--color-canvas-soft-2);
+        color: var(--color-link);
+      }
+
+      .mobile-nav-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 12px;
+        border-top: 1px solid var(--color-hairline);
       }
 
       .stats-strip {
@@ -135,6 +244,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         line-height: 1.1;
         color: var(--color-ink);
         margin-bottom: 4px;
+        word-break: break-word;
       }
 
       .stat-num.highlight {
@@ -212,6 +322,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         font-family: 'Geist Mono', monospace;
         font-weight: 600;
         color: var(--color-error);
+        white-space: nowrap;
       }
 
       .role-item .nobo-fee {
@@ -221,6 +332,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         display: flex;
         align-items: center;
         gap: 6px;
+        white-space: nowrap;
       }
 
       .grand-total-banner {
@@ -275,19 +387,44 @@ import logoTransparent from '../assets/logo-transparent.png';
         color: #ffffff;
       }
 
+      /* Mobile Scroll Hint */
+      .table-scroll-hint {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 auto 14px;
+        padding: 6px 14px;
+        background: rgba(0, 112, 243, 0.08);
+        border: 1px solid rgba(0, 112, 243, 0.2);
+        border-radius: var(--rounded-pill);
+        font-size: 12px;
+        font-weight: 600;
+        color: #0070f3;
+        width: fit-content;
+      }
+
       /* Detailed Table Styles */
-      .table-container {
+      .table-responsive {
         max-width: 1140px;
         margin: 0 auto;
-        background: #ffffff;
-        border: 1px solid var(--color-hairline);
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         border-radius: var(--rounded-xl);
-        overflow: hidden;
         box-shadow: 0 16px 40px rgba(0,0,0,0.03);
+        border: 1px solid var(--color-hairline);
+        background: #ffffff;
+      }
+
+      .table-container {
+        width: 100%;
+        min-width: 720px;
       }
 
       .comp-table {
         width: 100%;
+        min-width: 720px;
         border-collapse: collapse;
         text-align: left;
       }
@@ -319,16 +456,19 @@ import logoTransparent from '../assets/logo-transparent.png';
       }
 
       .feature-col {
-        width: 32%;
+        width: 34%;
+        min-width: 220px;
       }
 
       .agency-col {
-        width: 34%;
+        width: 33%;
+        min-width: 240px;
         background-color: rgba(254, 242, 242, 0.35);
       }
 
       .nobogent-col {
-        width: 34%;
+        width: 33%;
+        min-width: 240px;
         background-color: rgba(240, 247, 255, 0.45);
       }
 
@@ -467,6 +607,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         letter-spacing: 0.05em;
         text-transform: uppercase;
         box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
+        white-space: nowrap;
       }
 
       .plan-price-num {
@@ -477,6 +618,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         color: var(--color-ink);
         line-height: 1;
         margin: var(--spacing-md) 0 var(--spacing-xs);
+        word-break: break-word;
       }
 
       .plan-feature-list {
@@ -503,6 +645,15 @@ import logoTransparent from '../assets/logo-transparent.png';
         flex-shrink: 0;
       }
 
+      /* 1-Deal Math Grid */
+      .roi-math-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+        text-align: center;
+      }
+
       /* FAQ Accordion */
       .faq-item {
         background: #ffffff;
@@ -524,18 +675,21 @@ import logoTransparent from '../assets/logo-transparent.png';
         justify-content: space-between;
         align-items: center;
         user-select: none;
+        gap: 12px;
       }
 
       .faq-title {
         font-size: 15px;
         font-weight: 600;
         color: var(--color-ink);
+        line-height: 1.4;
       }
 
       .faq-toggle-icon {
         font-size: 18px;
         color: var(--color-mute);
         transition: transform 0.2s ease;
+        flex-shrink: 0;
       }
 
       .faq-body {
@@ -554,57 +708,276 @@ import logoTransparent from '../assets/logo-transparent.png';
         transform: rotate(45deg);
       }
 
-      @media (max-width: 900px) {
+      .footer-logo-img {
+        height: 48px;
+        width: auto;
+        max-width: 170px;
+        object-fit: contain;
+      }
+
+      /* ======================================================== */
+      /* RESPONSIVE MEDIA QUERIES                                 */
+      /* ======================================================== */
+
+      /* Medium Screens / Tablets (<= 992px) */
+      @media (max-width: 992px) {
+        .pricing-hero h1 {
+          font-size: clamp(2rem, 5vw, 3.25rem);
+        }
         .stats-strip {
           grid-template-columns: repeat(2, 1fr);
+          padding: 20px 18px;
+          gap: 16px;
         }
         .stat-card:nth-child(2) {
           border-right: none;
         }
         .stat-card:nth-child(3) {
           border-right: 1px solid var(--color-hairline);
-          margin-top: 16px;
         }
-        .stat-card:nth-child(4) {
-          margin-top: 16px;
-        }
-        .split-compare-grid {
-          grid-template-columns: 1fr;
-        }
-        .pricing-grid {
-          grid-template-columns: 1fr;
+        .stat-num {
+          font-size: 28px;
         }
         .calc-grid {
           grid-template-columns: 1fr;
+          gap: var(--spacing-xl);
         }
-        .feature-col {
-          width: 100%;
+        .pricing-grid {
+          grid-template-columns: 1fr;
+          max-width: 520px;
+          margin-left: auto;
+          margin-right: auto;
         }
-        .agency-col, .nobogent-col {
-          display: block;
-          width: 100%;
+      }
+
+      /* Tablet & Smaller Devices (<= 840px) */
+      @media (max-width: 840px) {
+        .desktop-nav {
+          display: none;
         }
-        .table-responsive {
+        .mobile-menu-btn {
+          display: flex;
+        }
+        .split-compare-grid {
+          grid-template-columns: 1fr;
+          gap: var(--spacing-xl);
+          margin-top: var(--spacing-xl);
+        }
+        .table-scroll-hint {
+          display: inline-flex;
+        }
+        .filter-tabs-wrapper {
+          justify-content: flex-start;
           overflow-x: auto;
+          flex-wrap: nowrap;
           -webkit-overflow-scrolling: touch;
+          padding: 6px 4px 14px;
+          margin: var(--spacing-lg) 0 var(--spacing-md);
+          scrollbar-width: none;
+        }
+        .filter-tabs-wrapper::-webkit-scrollbar {
+          display: none;
+        }
+        .filter-tab {
+          white-space: nowrap;
+          flex-shrink: 0;
+          padding: 7px 14px;
+          font-size: 12px;
+        }
+        .roi-math-grid {
+          grid-template-columns: 1fr;
+          gap: var(--spacing-md);
+          margin-bottom: var(--spacing-xl);
+        }
+      }
+
+      /* Mobile Devices (<= 640px) */
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 16px !important;
+        }
+        main > section {
+          padding: clamp(40px, 8vw, 64px) 0 !important;
+        }
+        .pricing-hero {
+          padding: 36px 0 20px;
+        }
+        .pricing-hero h1 {
+          font-size: clamp(1.75rem, 6.5vw, 2.35rem);
+          line-height: 1.15;
+          margin-bottom: 12px;
+        }
+        .pricing-hero p {
+          font-size: 15px !important;
+          line-height: 1.55 !important;
+          margin-bottom: 20px !important;
+        }
+        .hero-btn-group {
+          flex-direction: column;
+          width: 100%;
+          max-width: 340px;
+          margin: 0 auto;
+          gap: 10px !important;
+        }
+        .hero-btn-group .btn {
+          width: 100%;
+          padding: 12px 18px !important;
+          font-size: 14px !important;
+        }
+
+        .stats-strip {
+          grid-template-columns: 1fr;
+          padding: 18px 16px;
+          gap: 14px;
+          margin-top: var(--spacing-xl);
+        }
+        .stat-card {
+          padding: 10px 0;
+          border-right: none;
+          border-bottom: 1px solid var(--color-hairline);
+        }
+        .stat-card:last-child {
+          border-bottom: none;
+        }
+        .stat-num {
+          font-size: 26px;
+        }
+
+        .cost-stack-card {
+          padding: 20px 16px;
+          border-radius: var(--rounded-lg);
+        }
+        .cost-stack-card-header {
+          flex-direction: column;
+          align-items: flex-start !important;
+          gap: 8px;
+        }
+        .role-item {
+          padding: 10px 12px;
+          gap: 10px;
+          align-items: flex-start;
+        }
+        .role-item strong {
+          font-size: 13px;
+          line-height: 1.35;
+          display: block;
+        }
+        .role-item .agency-fee,
+        .role-item .nobo-fee {
+          font-size: 12px;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+        .grand-total-banner {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 12px !important;
+          padding: 14px 16px !important;
+        }
+        .grand-total-banner > div:last-child {
+          text-align: left !important;
+          border-top: 1px solid rgba(0, 0, 0, 0.08);
+          padding-top: 10px;
+          width: 100%;
+        }
+
+        .calc-card {
+          padding: 20px 16px;
+          border-radius: var(--rounded-lg);
+        }
+        .calc-result-box {
+          padding: 22px 16px;
+        }
+        #monthlySavingsVal {
+          font-size: clamp(30px, 8vw, 38px) !important;
+        }
+        #annualSavingsVal {
+          font-size: clamp(20px, 5.5vw, 24px) !important;
+        }
+        .slider-ticks span {
+          font-size: 10px;
+        }
+
+        .plan-card {
+          padding: 22px 16px;
+        }
+        .plan-price-num {
+          font-size: 32px;
+        }
+
+        .guarantee-box {
+          flex-direction: column !important;
+          text-align: center !important;
+          padding: 24px 16px !important;
+          gap: 14px !important;
+        }
+
+        .faq-header {
+          padding: 16px 16px;
+        }
+        .faq-title {
+          font-size: 14px;
+        }
+        .faq-body {
+          padding: 0 16px 16px;
+          font-size: 13px;
+        }
+
+        .final-cta-btn-group {
+          flex-direction: column;
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto;
+          gap: 10px !important;
+        }
+        .final-cta-btn-group .btn {
+          width: 100%;
+          padding: 12px 20px !important;
+        }
+
+        .footer-bottom-bar {
+          flex-direction: column;
+          gap: 8px !important;
+        }
+      }
+
+      /* Extra Small Mobile Devices (<= 480px) */
+      @media (max-width: 480px) {
+        .header-logo-img {
+          height: 36px;
+          max-width: 110px;
+        }
+        .header-btn-login {
+          display: none !important;
+        }
+        .header-btn-plans {
+          padding: 6px 12px !important;
+          font-size: 12px !important;
+        }
+        .badge-pill {
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+        .tick-sub {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
     <!-- Top Micro Announcement -->
-    <div style="background-color: var(--color-primary); color: var(--color-on-primary); padding: 8px 16px; font-size: 11px; font-weight: 500; text-align: center; letter-spacing: 0.05em;" class="mono-label">
+    <div style="background-color: var(--color-primary); color: var(--color-on-primary); padding: 8px 16px; font-size: clamp(10px, 2.5vw, 11px); font-weight: 500; text-align: center; letter-spacing: 0.05em; line-height: 1.4;" class="mono-label">
       INDIA REAL ESTATE BENCHMARK • SAVE UP TO ₹8.4 LAKHS ANNUALLY VS AGENCY RETAINERS
     </div>
 
     <!-- Header Navigation -->
     <header class="header-nav">
       <div class="container header-container">
-        <a href="/" style="display: flex; align-items: center; justify-content: center; height: 100%;">
-          <Image src={logoTransparent} alt="Nobogent Logo" width={270} style="height: 90px; width: auto; object-fit: contain;" />
+        <a href="/" class="header-logo-link">
+          <Image src={logoTransparent} alt="Nobogent Logo" width={270} class="header-logo-img" />
         </a>
 
-        <nav>
+        <nav class="desktop-nav">
           <ul class="nav-links">
             <li><a href="#comparison">Agency vs Nobogent</a></li>
             <li><a href="#calculator">Savings Calculator</a></li>
@@ -615,9 +988,36 @@ import logoTransparent from '../assets/logo-transparent.png';
           </ul>
         </nav>
 
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <a href="https://app.nobogent.com" class="btn btn-secondary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Login</a>
-          <a href="#plans" class="btn btn-primary" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Get Started</a>
+        <div class="header-cta-group">
+          <a href="https://app.nobogent.com" class="btn btn-secondary header-btn-login" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Login</a>
+          <a href="#plans" class="btn btn-primary header-btn-plans" style="padding: var(--spacing-xxs) var(--spacing-md); font-size: 13px;">Get Started</a>
+          <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg class="close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation Drawer -->
+      <div id="mobileNavDrawer" class="mobile-nav-drawer">
+        <ul class="mobile-nav-links">
+          <li><a href="#comparison" class="mobile-nav-item">Agency vs Nobogent</a></li>
+          <li><a href="#calculator" class="mobile-nav-item">Savings Calculator</a></li>
+          <li><a href="#full-table" class="mobile-nav-item">Feature Breakdown (17-in-1)</a></li>
+          <li><a href="#plans" class="mobile-nav-item">Plans & Pricing</a></li>
+          <li><a href="#roi" class="mobile-nav-item">1-Deal ROI Math</a></li>
+          <li><a href="#faq" class="mobile-nav-item">FAQ</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <a href="https://app.nobogent.com" class="btn btn-secondary" style="width: 100%; justify-content: center; font-size: 13px;">Login to Portal</a>
+          <a href="#plans" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 13px;">Get Started &rarr;</a>
         </div>
       </div>
     </header>
@@ -643,7 +1043,7 @@ import logoTransparent from '../assets/logo-transparent.png';
             Real estate builders and channel partners in India bleed lakhs on fragmented digital marketing agencies, telecalling salaries, and disconnected SaaS tools. Nobogent replaces 6 full-time agency roles with one unified, 24/7 autonomous AI system.
           </p>
 
-          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <div class="hero-btn-group" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
             <a href="#comparison" class="btn btn-primary" style="padding: 12px 28px; font-size: 14px; font-weight: 600;">
               View Side-by-Side Comparison ↓
             </a>
@@ -691,7 +1091,7 @@ import logoTransparent from '../assets/logo-transparent.png';
             <!-- Left: Traditional Indian Agencies (17 Items) -->
             <div class="cost-stack-card agency-side">
               <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                <div class="cost-stack-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
                   <div>
                     <h3 style="font-size: 20px; font-weight: 700; color: var(--color-ink);">Traditional Agency & Multi-Vendor Stack</h3>
                     <div style="font-size: 12px; color: var(--color-error); font-weight: 600;">17 Separate Invoices & Overheads</div>
@@ -845,7 +1245,7 @@ import logoTransparent from '../assets/logo-transparent.png';
             <!-- Right: Nobogent AI System (17 Items Included) -->
             <div class="cost-stack-card nobo-side">
               <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+                <div class="cost-stack-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
                   <div>
                     <h3 style="font-size: 20px; font-weight: 700; color: var(--color-ink);">Nobogent AI Real Estate Department</h3>
                     <div style="font-size: 12px; color: #0070f3; font-weight: 600;">All 17 Features In One Single System</div>
@@ -1018,10 +1418,10 @@ import logoTransparent from '../assets/logo-transparent.png';
                     <span id="agencySpendDisplay" style="font-family: 'Geist Mono'; font-size: 18px; font-weight: 700; color: var(--color-ink);">₹1,60,000</span>
                   </div>
                   <input type="range" id="agencySpendSlider" class="slider-control" min="40000" max="350000" step="5000" value="160000" />
-                  <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-mute); margin-top: 4px;">
-                    <span>₹40,000 (Freelancer Pair)</span>
-                    <span>₹1,60,000 (17-Tool Disjointed Stack)</span>
-                    <span>₹3,50,000+ (Full In-House Marketing Team)</span>
+                  <div class="slider-ticks" style="display: flex; justify-content: space-between; font-size: 11px; color: var(--color-mute); margin-top: 4px;">
+                    <span>₹40k <span class="tick-sub">(Freelance)</span></span>
+                    <span>₹1.6L <span class="tick-sub">(17 Tools)</span></span>
+                    <span>₹3.5L+ <span class="tick-sub">(Full Team)</span></span>
                   </div>
                 </div>
 
@@ -1095,6 +1495,11 @@ import logoTransparent from '../assets/logo-transparent.png';
             <button class="filter-tab" data-category="whatsapp">WhatsApp & Bot (3)</button>
             <button class="filter-tab" data-category="ads">Ads & Lead Gen (3)</button>
             <button class="filter-tab" data-category="crm">CRM & Operations (4)</button>
+          </div>
+
+          <!-- Mobile Scroll Indicator Hint -->
+          <div class="table-scroll-hint">
+            <span>↔ Swipe horizontally to compare columns</span>
           </div>
 
           <!-- The Table -->
@@ -1688,7 +2093,7 @@ import logoTransparent from '../assets/logo-transparent.png';
             In Indian real estate, a single property transaction yields an average brokerage commission or developer margin between <strong>₹1.5 Lakhs and ₹5.0+ Lakhs</strong>.
           </p>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); margin-bottom: var(--spacing-2xl); text-align: center;">
+          <div class="roi-math-grid">
             <div style="background: #ffffff; border: 1px solid var(--color-hairline); border-radius: var(--rounded-lg); padding: var(--spacing-xl);">
               <div style="font-size: 32px; margin-bottom: 8px;">🤝</div>
               <div style="font-size: 13px; font-weight: 600; color: var(--color-mute); text-transform: uppercase;">Average Deal Commission</div>
@@ -1825,7 +2230,7 @@ import logoTransparent from '../assets/logo-transparent.png';
             Deploy your 24/7 AI Sales & Marketing Department today. Dials leads in 30 seconds, automates WhatsApp inquiries, and saves your real estate business over ₹7.8 Lakhs annually.
           </p>
 
-          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <div class="final-cta-btn-group" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
             <a href="https://nobogent.com" class="btn btn-secondary" style="font-size: 15px; font-weight: 700; padding: 14px 36px; background: #ffffff; color: #171717;">
               Get Started with Nobogent &rarr;
             </a>
@@ -1849,7 +2254,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-lg);">
           <div>
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--spacing-xs);">
-              <Image src={logoTransparent} alt="Nobogent Logo" width={288} style="height: 96px; width: auto; object-fit: contain;" />
+              <Image src={logoTransparent} alt="Nobogent Logo" width={288} class="footer-logo-img" />
             </div>
             <p style="color: var(--color-mute); max-width: 280px; line-height: 1.6;">
               World's First AI Sales & Marketing Department for Real Estate. Auto-dial leads in 30 seconds, deploy WhatsApp AI bots, and bypass ad blocks with CAPI.
@@ -1873,7 +2278,7 @@ import logoTransparent from '../assets/logo-transparent.png';
             </div>
           </div>
         </div>
-        <div style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; color: var(--color-mute);">
+        <div class="footer-bottom-bar" style="border-top: 1px solid var(--color-hairline); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; color: var(--color-mute);">
           <p>© {new Date().getFullYear()} Nobogent AI Solutions LLP. All rights reserved.</p>
           <p>Indian Rupee (INR) Pricing Estimates based on 2026 Tier-1 & Tier-2 Agency Benchmarks.</p>
         </div>
@@ -1951,6 +2356,40 @@ import logoTransparent from '../assets/logo-transparent.png';
             });
           }
         });
+
+        // --- 4. Mobile Menu Drawer Toggle ---
+        var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        var mobileNavDrawer = document.getElementById('mobileNavDrawer');
+        var hamburgerIcon = mobileMenuToggle ? mobileMenuToggle.querySelector('.hamburger-icon') : null;
+        var closeIcon = mobileMenuToggle ? mobileMenuToggle.querySelector('.close-icon') : null;
+
+        if (mobileMenuToggle && mobileNavDrawer) {
+          mobileMenuToggle.addEventListener('click', function() {
+            var isOpen = mobileNavDrawer.classList.contains('open');
+            if (isOpen) {
+              mobileNavDrawer.classList.remove('open');
+              mobileMenuToggle.setAttribute('aria-expanded', 'false');
+              if (hamburgerIcon) hamburgerIcon.style.display = 'block';
+              if (closeIcon) closeIcon.style.display = 'none';
+            } else {
+              mobileNavDrawer.classList.add('open');
+              mobileMenuToggle.setAttribute('aria-expanded', 'true');
+              if (hamburgerIcon) hamburgerIcon.style.display = 'none';
+              if (closeIcon) closeIcon.style.display = 'block';
+            }
+          });
+
+          // Close mobile drawer on item tap
+          var mobileNavItems = mobileNavDrawer.querySelectorAll('a');
+          mobileNavItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+              mobileNavDrawer.classList.remove('open');
+              mobileMenuToggle.setAttribute('aria-expanded', 'false');
+              if (hamburgerIcon) hamburgerIcon.style.display = 'block';
+              if (closeIcon) closeIcon.style.display = 'none';
+            });
+          });
+        }
       });
     </script>
   </body>
