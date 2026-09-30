@@ -16,29 +16,58 @@ import logoTransparent from '../assets/logo-transparent.png';
     <meta name="keywords" content="nobogent pricing, real estate marketing agency cost india, AI calling real estate, real estate CRM pricing, WhatsApp bot real estate price, real estate lead generation cost india" />
     <link rel="canonical" href="https://nobogent.com/pricing-india" />
     
-    <!-- Fonts -->
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.cdnfonts.com/css/geist-sans" rel="stylesheet" />
-    <link href="https://fonts.cdnfonts.com/css/geist-mono" rel="stylesheet" />
+    <link rel="preload" as="image" href="/videos/vsl-poster.webp" type="image/webp" />
+
+    <!-- Non-Blocking Async Fonts -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      />
+    </noscript>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nobogent.com/pricing-india" />
     <meta property="og:title" content="Nobogent AI vs Indian Digital Marketing Agencies | Pricing & Feature Breakdown" />
     <meta property="og:description" content="Why pay ₹70,000+/mo for slow agency retainers? Get an instant 30s AI calling department, 24/7 WhatsApp AI concierge, and Meta CAPI ads for ₹9,999/mo." />
-    <!-- Meta Pixel Code (Ad Account: 1532845147843203, Pixel ID: 1684055349552829) -->
+    
+    <!-- Meta Pixel Code (High Performance: Queues immediately, loads script asynchronously) -->
     <script is:inline>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      n.queue=[];
+      function loadFbq(){
+        if(window._fbqScriptLoaded)return;
+        window._fbqScriptLoaded=true;
+        t=b.createElement(e);t.async=!0;t.src=v;
+        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+      }
+      if('requestIdleCallback' in window){
+        requestIdleCallback(function(){setTimeout(loadFbq, 800);});
+      }else{
+        window.addEventListener('load', function(){setTimeout(loadFbq, 800);});
+      }
+      ['scroll','touchstart','click'].forEach(function(ev){
+        window.addEventListener(ev, loadFbq, {once:true, passive:true});
+      });
+      }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1684055349552829');
       fbq('track', 'PageView');
     </script>
@@ -984,10 +1013,49 @@ import logoTransparent from '../assets/logo-transparent.png';
          VSL Video Showcase Section (High-Performance, Vercel-Styled)
          ========================================================================= */
       .vsl-showcase-container {
-        max-width: 960px;
+        max-width: 920px;
         width: 100%;
-        margin: var(--spacing-xl) auto var(--spacing-3xl);
-        text-align: left;
+        margin: var(--spacing-2xl) auto var(--spacing-3xl);
+        text-align: center;
+      }
+
+      .vsl-header-intro {
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      .vsl-badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        color: #0070f3;
+        background: rgba(0, 112, 243, 0.08);
+        border: 1px solid rgba(0, 112, 243, 0.2);
+        padding: 4px 12px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+      }
+
+      .vsl-header-intro h2 {
+        font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.25;
+        margin-bottom: 8px;
+        color: var(--color-ink);
+      }
+
+      .vsl-header-intro p {
+        font-size: clamp(13px, 2vw, 15px);
+        color: var(--color-mute);
+        max-width: 580px;
+        margin: 0 auto;
+        line-height: 1.5;
       }
 
       .vsl-frame {
@@ -995,7 +1063,7 @@ import logoTransparent from '../assets/logo-transparent.png';
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
       }
 
@@ -1015,13 +1083,13 @@ import logoTransparent from '../assets/logo-transparent.png';
 
       .vsl-dots-group {
         display: flex;
-        gap: 7px;
+        gap: 6px;
         align-items: center;
       }
 
       .vsl-dot {
-        width: 11px;
-        height: 11px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         display: inline-block;
       }
@@ -1031,35 +1099,28 @@ import logoTransparent from '../assets/logo-transparent.png';
       .vsl-dot-green { background: #27c93f; }
 
       .vsl-topbar-title {
-        font-family: 'Geist Mono', monospace;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
         font-size: 11px;
         color: #a1a1aa;
         letter-spacing: 0.02em;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 0 12px;
+        padding: 0 10px;
       }
 
-      .vsl-badge-pill {
+      .vsl-topbar-badge {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        font-family: 'Geist Mono', monospace;
+        gap: 5px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
         font-size: 10px;
+        font-weight: 600;
         color: #38bdf8;
         background: rgba(56, 189, 248, 0.12);
         border: 1px solid rgba(56, 189, 248, 0.25);
-        padding: 2px 8px;
+        padding: 2px 7px;
         border-radius: 999px;
-      }
-
-      .vsl-dot-live {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #38bdf8;
-        box-shadow: 0 0 6px #38bdf8;
       }
 
       .vsl-video-wrapper {
@@ -1078,15 +1139,16 @@ import logoTransparent from '../assets/logo-transparent.png';
         background: #000;
       }
 
+      /* Clean, uncluttered overlay with sleek play button */
       .vsl-play-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+        background: rgba(0, 0, 0, 0.35);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 16px;
+        gap: 12px;
         cursor: pointer;
         transition: opacity 0.25s ease, visibility 0.25s ease;
         z-index: 5;
@@ -1099,71 +1161,71 @@ import logoTransparent from '../assets/logo-transparent.png';
       }
 
       .vsl-custom-play-btn {
-        width: 72px;
-        height: 72px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #0070f3, #0051b3);
-        border: 2px solid rgba(255, 255, 255, 0.4);
+        background: #0070f3;
+        border: 2px solid rgba(255, 255, 255, 0.8);
         color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 0 30px rgba(0, 112, 243, 0.6), 0 4px 14px rgba(0,0,0,0.5);
+        box-shadow: 0 0 25px rgba(0, 112, 243, 0.7), 0 4px 14px rgba(0,0,0,0.5);
         cursor: pointer;
         transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
         padding-left: 4px;
       }
 
       .vsl-play-overlay:hover .vsl-custom-play-btn {
-        transform: scale(1.1);
-        box-shadow: 0 0 40px rgba(0, 112, 243, 0.8), 0 6px 20px rgba(0,0,0,0.6);
+        transform: scale(1.08);
+        box-shadow: 0 0 35px rgba(0, 112, 243, 0.9), 0 6px 20px rgba(0,0,0,0.6);
       }
 
-      .vsl-play-text {
-        text-align: center;
+      .vsl-play-pill {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12px;
+        font-weight: 600;
         color: #ffffff;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 6px 16px;
+        border-radius: 999px;
+        letter-spacing: 0.02em;
+        pointer-events: none;
       }
 
-      .vsl-play-text strong {
-        display: block;
-        font-size: 17px;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        margin-bottom: 4px;
-      }
-
-      .vsl-play-text span {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.75);
-      }
-
-      .vsl-bottom-banner {
+      /* Clean action banner placed below video */
+      .vsl-action-banner {
+        margin-top: 18px;
+        padding: 16px 22px;
+        background: var(--color-canvas);
+        border: 1px solid var(--color-hairline);
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        padding: 16px 24px;
-        background: #111218;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
         flex-wrap: wrap;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
 
-      .vsl-bottom-text {
-        color: #ffffff;
+      .vsl-action-text {
         text-align: left;
       }
 
-      .vsl-bottom-text strong {
+      .vsl-action-text strong {
         display: block;
         font-size: 14px;
-        font-weight: 600;
-        color: #ffffff;
+        font-weight: 700;
+        color: var(--color-ink);
         margin-bottom: 2px;
       }
 
-      .vsl-bottom-text span {
+      .vsl-action-text span {
         font-size: 12px;
-        color: #a1a1aa;
+        color: var(--color-mute);
       }
 
       /* =========================================================================
@@ -1640,12 +1702,22 @@ import logoTransparent from '../assets/logo-transparent.png';
         .qual-options-grid {
           grid-template-columns: 1fr;
         }
-        .vsl-bottom-banner {
+        .vsl-custom-play-btn {
+          width: 56px;
+          height: 56px;
+        }
+        .vsl-play-pill {
+          font-size: 11px;
+          padding: 5px 12px;
+        }
+        .vsl-action-banner {
           flex-direction: column;
           align-items: stretch;
           text-align: center;
+          padding: 14px 16px;
+          gap: 12px;
         }
-        .vsl-bottom-text {
+        .vsl-action-text {
           text-align: center;
         }
       }
@@ -1744,6 +1816,15 @@ import logoTransparent from '../assets/logo-transparent.png';
 
           <!-- VSL Video Section (Optimized for Fast Page Load & High Conversion) -->
           <div id="vsl-section" class="vsl-showcase-container animate-slide-up">
+            <div class="vsl-header-intro">
+              <div class="vsl-badge-pill">
+                <span>▶</span>
+                <span>5-Minute System Breakdown</span>
+              </div>
+              <h2>See How Nobogent Dials Leads in 30 Seconds</h2>
+              <p>Watch our autonomous AI calling agent, WhatsApp booking engine, and Meta CAPI telemetry in action.</p>
+            </div>
+
             <div class="vsl-frame">
               <div class="vsl-screen-topbar">
                 <div class="vsl-dots-group">
@@ -1752,21 +1833,20 @@ import logoTransparent from '../assets/logo-transparent.png';
                   <span class="vsl-dot vsl-dot-green"></span>
                 </div>
                 <div class="vsl-topbar-title">
-                  nobogent-vsl.mp4 — Full Autonomous Real Estate Sales Department Walkthrough (5:20)
+                  System Walkthrough (5:20)
                 </div>
-                <div class="vsl-badge-pill">
-                  <span class="vsl-dot-live"></span>
-                  <span>HD 1080P</span>
+                <div class="vsl-topbar-badge">
+                  <span>●</span>
+                  <span>1080P HD</span>
                 </div>
               </div>
 
               <div class="vsl-video-wrapper" id="vslVideoContainer">
                 <video
                   id="vslVideoPlayer"
-                  preload="metadata"
+                  preload="none"
                   playsinline
-                  controls
-                  poster="/videos/vsl-poster.jpg"
+                  poster="/videos/vsl-poster.webp"
                   class="vsl-video-element"
                 >
                   <source src="/videos/nobogent-vsl.mp4" type="video/mp4" />
@@ -1774,27 +1854,25 @@ import logoTransparent from '../assets/logo-transparent.png';
                 </video>
 
                 <div id="vslPlayOverlay" class="vsl-play-overlay">
-                  <button type="button" class="vsl-custom-play-btn" aria-label="Play Walkthrough Video">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <button type="button" class="vsl-custom-play-btn" id="vslPlayBtn" aria-label="Play Walkthrough Video">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
                       <polygon points="6 4 20 12 6 20 6 4"></polygon>
                     </svg>
                   </button>
-                  <div class="vsl-play-text">
-                    <strong>Click to Watch 5-Minute System Breakdown</strong>
-                    <span>See how AI dials incoming leads in 30 seconds & books site visits</span>
-                  </div>
+                  <span class="vsl-play-pill">▶ Watch 5-Minute Demo (5:20)</span>
                 </div>
               </div>
+            </div>
 
-              <div class="vsl-bottom-banner">
-                <div class="vsl-bottom-text">
-                  <strong>Ready to experience Nobogent in your real estate business?</strong>
-                  <span>Takes 60 seconds to qualify for priority Indian onboarding & live AI setup.</span>
-                </div>
-                <button type="button" class="btn btn-primary open-qual-modal" data-source="vsl_banner" data-plan="Growth Plan (₹9,999/mo)" style="padding: 12px 24px; font-size: 14px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 14px rgba(0, 112, 243, 0.4); cursor: pointer;">
-                  Claim ₹9,999/mo Offer &rarr;
-                </button>
+            <!-- Clean, uncluttered action banner below the frame -->
+            <div class="vsl-action-banner">
+              <div class="vsl-action-text">
+                <strong>Ready to deploy this AI system in your real estate business?</strong>
+                <span>Takes 60 seconds to qualify for priority Indian onboarding & live AI setup.</span>
               </div>
+              <button type="button" class="btn btn-primary open-qual-modal" data-source="vsl_banner" data-plan="Growth Plan (₹9,999/mo)" style="padding: 11px 24px; font-size: 14px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 14px rgba(0, 112, 243, 0.35); cursor: pointer;">
+                Claim ₹9,999/mo Offer &rarr;
+              </button>
             </div>
           </div>
 
@@ -3845,6 +3923,33 @@ import logoTransparent from '../assets/logo-transparent.png';
         }
 
         bindAllButtonsToModal();
+
+        // =========================================================================
+        // 8. VSL Video Player Handler (Smooth Playback & Uncluttered State)
+        // =========================================================================
+        var vslPlayer = document.getElementById('vslVideoPlayer');
+        var vslOverlay = document.getElementById('vslPlayOverlay');
+
+        if (vslPlayer && vslOverlay) {
+          function playVsl() {
+            vslPlayer.controls = true;
+            vslOverlay.classList.add('hidden');
+            vslPlayer.play().catch(function(err) {
+              console.log('[VSL Player notice]:', err);
+            });
+          }
+
+          vslOverlay.addEventListener('click', playVsl);
+
+          vslPlayer.addEventListener('play', function() {
+            vslOverlay.classList.add('hidden');
+          });
+
+          vslPlayer.addEventListener('ended', function() {
+            vslOverlay.classList.remove('hidden');
+            vslPlayer.controls = false;
+          });
+        }
       });
     </script>
   </body>
