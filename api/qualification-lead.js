@@ -170,7 +170,8 @@ export default async function handler(req, res) {
             autonomous_status: 'NEW',
             pixel_id,
             notes: notesSummary,
-            custom_fields: customFields
+            custom_fields: customFields,
+            created_at: new Date().toISOString()
           })
         }
       );
