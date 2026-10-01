@@ -2,6 +2,7 @@
 // and route them directly to Nobogent Super Admin (rchopra489@gmail.com) in Supabase CRM
 
 const DEFAULT_SUPABASE_URL = 'https://hpssqssdewmkmafxlfud.supabase.co';
+const DEFAULT_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhwc3Nxc3NkZXdta21hZnhsZnVkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjgxMTkyMSwiZXhwIjoyMDk4Mzg3OTIxfQ.HgzsU10Lft2bpkOe5SMx-MyW_kmx0ld7txyqe8grlAA';
 const SUPER_ADMIN_USER_ID = 'bc63c065-9bcc-4793-bedc-f0960406425b'; // rchopra489@gmail.com
 
 export default async function handler(req, res) {
@@ -41,12 +42,7 @@ export default async function handler(req, res) {
     }
 
     const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || DEFAULT_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-    if (!supabaseKey) {
-      console.error('[API] Missing SUPABASE_SERVICE_ROLE_KEY');
-      return res.status(500).json({ error: 'Server database configuration error' });
-    }
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || DEFAULT_SUPABASE_KEY;
 
     const cleanDigits = (phone || '').replace(/\D/g, '');
     const cleanPhone = cleanDigits.startsWith('91') && cleanDigits.length === 12
@@ -137,7 +133,9 @@ export default async function handler(req, res) {
             notes: notesSummary,
             pipeline_stage: 'New Lead',
             status: 'New Lead',
-            updated_at: new Date().toISOString()
+            calling_enabled: true,
+            whatsapp_enabled: true,
+            autonomous_status: 'NEW'
           })
         }
       );
@@ -167,6 +165,9 @@ export default async function handler(req, res) {
             ad_name: 'pricing-india-meta-ad',
             pipeline_stage: 'New Lead',
             status: 'New Lead',
+            calling_enabled: true,
+            whatsapp_enabled: true,
+            autonomous_status: 'NEW',
             pixel_id,
             notes: notesSummary,
             custom_fields: customFields

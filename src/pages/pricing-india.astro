@@ -3398,13 +3398,13 @@ import logoTransparent from '../assets/logo-transparent.png';
                 </div>
                 <h3 class="qual-success-title">Application Received!</h3>
                 <p class="qual-success-desc">
-                  Thank you, <strong id="successLeadName" style="color: #111827;">Partner</strong>! Your business profile has been routed to Nobogent's Executive Desk (<span style="color: #0070f3; font-weight: 600;">rchopra489@gmail.com</span> CRM).
+                  Thank you, <strong id="successLeadName" style="color: #111827;">Partner</strong>! Your request for priority onboarding has been received.
                   <br /><br />
                   Our real estate AI automation strategist will connect with you on WhatsApp at <strong id="successLeadPhone" style="color: #111827;">your number</strong> within 15 minutes to initiate your onboarding.
                 </p>
                 <div class="qual-success-badge">
                   <span>✓</span>
-                  <span>Meta Lead Verified • Super Admin Synced</span>
+                  <span>Application Verified • Priority Onboarding</span>
                 </div>
               </div>
             </div>
@@ -3833,44 +3833,19 @@ import logoTransparent from '../assets/logo-transparent.png';
           };
 
           // Primary endpoint: Same-origin Vercel serverless function /api/qualification-lead
-          // Fallback endpoint: https://app.nobogent.com/api/contact
           fetch('/api/qualification-lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           })
-          .then(function(res) {
+          .then(async function(res) {
             if (!res.ok) {
-              // Try fallback to app.nobogent.com contact API
-              return fetch('https://app.nobogent.com/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  name: payload.name,
-                  email: payload.email,
-                  phone: payload.phone,
-                  budget: payload.marketing_spend,
-                  timeline: payload.leads_per_month,
-                  message: [
-                    '=== PRICING INDIA QUALIFICATION FORM ===',
-                    'Business: ' + payload.business_type,
-                    'Marketing Spend: ' + payload.marketing_spend,
-                    'Leads/Mo: ' + payload.leads_per_month,
-                    'Responsible Lead: ' + payload.responsible_role,
-                    'Goals: ' + (payload.primary_goals.join(', ')),
-                    'CRM: ' + payload.current_crm,
-                    'City: ' + payload.city,
-                    'Target Admin: rchopra489@gmail.com'
-                  ].join('\n')
-                })
-              });
+              var errData = await res.json().catch(function() { return {}; });
+              throw new Error(errData.error || 'Server error ' + res.status);
             }
             return res.json();
           })
-          .catch(function(err) {
-            console.warn('[CRM Lead Dispatch] Attempting fallback submission:', err);
-          })
-          .finally(function() {
+          .then(function(data) {
             // Track Meta Pixel Lead event
             try {
               if (typeof window.fbq === 'function') {
@@ -3894,6 +3869,16 @@ import logoTransparent from '../assets/logo-transparent.png';
 
             currentStep = 5;
             renderStep(5);
+          })
+          .catch(function(err) {
+            console.error('[Qualification Lead Error]:', err);
+            var errEl = document.getElementById('step4Error');
+            if (errEl) {
+              errEl.textContent = 'Submission failed. Please check your connection and try again.';
+              errEl.classList.add('show');
+            }
+            if (nextBtnText) nextBtnText.textContent = 'Complete Qualification \u2192';
+            if (qualNextBtn) qualNextBtn.disabled = false;
           });
         }
 
